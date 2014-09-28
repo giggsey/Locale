@@ -1,0 +1,18 @@
+{
+    "name": "giggsey/locale",
+    "description": "Basic implementation of Locale functions required by libphonenumber-for-php",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Joshua Gigg",
+            "email": "giggsey@gmail.com",
+            "homepage": "http://giggsey.com/"
+        }
+    ],
+
+    "require-dev": {
+        "phpunit/phpunit": "~4.0",
+        "satooshi/php-coveralls":  "~0.6"
+    }
+}
