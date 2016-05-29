@@ -15,6 +15,7 @@ php:
   - 7
 
 before_script:
+ - echo "memory_limit=2G" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
  - wget http://getcomposer.org/composer.phar
  - php composer.phar install --no-interaction
  - mkdir -p build/logs
