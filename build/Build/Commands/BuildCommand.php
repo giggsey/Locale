@@ -43,6 +43,4 @@ class BuildCommand extends Command
             $output
         );
     }
-
-
 }
