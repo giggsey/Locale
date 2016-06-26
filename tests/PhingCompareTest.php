@@ -88,8 +88,6 @@ class PhingCompareTest extends \PHPUnit_Framework_TestCase
                 md5_file(static::$outputDir . '/' . $file->getFilename()),
                 $file->getFilename() . ' md5 should match'
             );
-
         }
-
     }
 }
