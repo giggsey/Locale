@@ -1,0 +1,11 @@
+{
+  "main": {
+    "en-150": {
+      "localeDisplayNames": {
+        "territories": {
+          "IGN": "Ignored Locale"
+        }
+      }
+    }
+  }
+}

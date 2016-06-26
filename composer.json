@@ -17,7 +17,8 @@
     "pear/versioncontrol_git": "dev-master",
     "pear/pear-core-minimal": "^1.9",
     "pear/pear_exception": "^1.0",
-    "symfony/console": "^2.8|^3.0"
+    "symfony/console": "^2.8|^3.0",
+    "symfony/filesystem": "^2.8|^3.0"
   },
   "autoload": {
     "psr-4": {

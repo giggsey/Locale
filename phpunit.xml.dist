@@ -11,6 +11,7 @@
     <filter>
         <whitelist>
             <directory suffix=".php">./src/</directory>
+            <file>./build/Build/DataBuilder.php</file>
         </whitelist>
     </filter>
 

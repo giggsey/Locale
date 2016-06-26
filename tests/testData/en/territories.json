@@ -1,0 +1,14 @@
+{
+  "main": {
+    "en": {
+      "localeDisplayNames": {
+        "territories": {
+          "MFC": "My First Country",
+          "EU": "Ignored region",
+          "GB-alt-short": "Ignored alternative",
+          "001": "Ignored numerical territory code"
+        }
+      }
+    }
+  }
+}

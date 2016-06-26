@@ -87,6 +87,13 @@ EOT;
         $progress->finish();
     }
 
+    /**
+     * Check and create directories
+     *
+     * @param string $inputDir
+     * @param string $outputDir
+     * @codeCoverageIgnore Ignore for unit test coverage
+     */
     private function checkDirectories($inputDir, $outputDir)
     {
         if (!is_dir($inputDir)) {
