@@ -17,7 +17,6 @@ php:
   - nightly
 
 before_script:
- - composer self-update
  - composer install --no-interaction
  - mkdir -p build/logs
 
