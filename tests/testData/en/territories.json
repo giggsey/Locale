@@ -6,7 +6,8 @@
           "MFC": "My First Country",
           "EU": "Ignored region",
           "GB-alt-short": "Ignored alternative",
-          "001": "Ignored numerical territory code"
+          "001": "Ignored numerical territory code",
+          "CH": "CH"
         }
       }
     }

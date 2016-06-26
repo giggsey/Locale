@@ -7,7 +7,6 @@
  */
 
 return array (
-  'AC' => 'AC',
   'AD' => 'Andorra',
   'AE' => 'Emirâts araps unîts',
   'AF' => 'Afghanistan',
@@ -37,7 +36,6 @@ return array (
   'BM' => 'Bermuda',
   'BN' => 'Brunei',
   'BO' => 'Bolivie',
-  'BQ' => 'BQ',
   'BR' => 'Brasîl',
   'BS' => 'Bahamas',
   'BT' => 'Bhutan',
@@ -59,7 +57,6 @@ return array (
   'CR' => 'Costa Rica',
   'CU' => 'Cuba',
   'CV' => 'Cjâf vert',
-  'CW' => 'CW',
   'CX' => 'Isule Christmas',
   'CY' => 'Cipri',
   'CZ' => 'Republiche ceche',
@@ -216,10 +213,8 @@ return array (
   'SN' => 'Senegal',
   'SO' => 'Somalie',
   'SR' => 'Suriname',
-  'SS' => 'SS',
   'ST' => 'Sao Tomè e Principe',
   'SV' => 'El Salvador',
-  'SX' => 'SX',
   'SY' => 'Sirie',
   'SZ' => 'Swaziland',
   'TA' => 'Tristan da Cunha',
@@ -254,7 +249,6 @@ return array (
   'VU' => 'Vanuatu',
   'WF' => 'Wallis e Futuna',
   'WS' => 'Samoa',
-  'XK' => 'XK',
   'YE' => 'Yemen',
   'YT' => 'Mayotte',
   'ZA' => 'Sud Afriche',

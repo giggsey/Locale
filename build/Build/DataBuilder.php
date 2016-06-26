@@ -165,6 +165,11 @@ EOT;
                     continue;
                 }
 
+                if ($territory === $name) {
+                    // Ignore the data if it's the same as the territory name
+                    continue;
+                }
+
                 $countries[$locale][$territory] = $name;
             }
         }

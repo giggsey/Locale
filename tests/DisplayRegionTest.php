@@ -30,6 +30,7 @@ class DisplayRegionTest extends \PHPUnit_Framework_TestCase
         return array_merge(
             $this->dataForUnitedKingdom(),
             $this->dataForGermany(),
+            $this->dataForMissingEntries(),
             $this->dataForInvalidRegions()
         );
     }
@@ -69,6 +70,14 @@ class DisplayRegionTest extends \PHPUnit_Framework_TestCase
             array('de-DE', 'de-DE', 'Deutschland'),
             array('de-DE', 'ru', 'Германия'),
             array('de-DE', 'fr', 'Allemagne'),
+        );
+    }
+
+    protected function dataForMissingEntries()
+    {
+        return array(
+            array('-rs', 'en', 'Serbia'),
+            array('-rs', 'ee', ''), // PHP returns 'RS' here, which I think is wrong...
         );
     }
 

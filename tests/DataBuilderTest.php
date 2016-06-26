@@ -66,6 +66,7 @@ class DataBuilderTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayNotHasKey('EU', $data, 'EU is part of the ignored region list, so should be ignored');
         $this->assertArrayNotHasKey('GB-alt-short', $data, 'GB-alt-short is an alternative name, so should be ignored');
         $this->assertArrayNotHasKey('001', $data, '001 is a numerical territory name, so should be ignored');
+        $this->assertArrayNotHasKey('CH', $data, 'CH has the same name as the key, so should be ignored');
     }
 
     /**
