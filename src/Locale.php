@@ -68,15 +68,14 @@ class Locale
          * E.g zh-Hans-HK will look for zh-Hanks-HK, zh-Hanks, then finally zh
          */
         $fallbackParts = explode('-', str_replace('_', '-', $inLocale));
-        $fileToSearch = null;
+        $filesToSearch = array();
 
         $i = count($fallbackParts);
         while ($i > 0) {
             $searchLocale = strtolower(implode('-', $fallbackParts));
 
             if (isset($regionList[$searchLocale])) {
-                $fileToSearch = $searchLocale;
-                break;
+                $filesToSearch[] = $searchLocale;
             }
 
             array_pop($fallbackParts);
@@ -84,12 +83,11 @@ class Locale
         }
 
         /*
-         * Load data file, and load the region (if it exists) from it
+         * Load data files, and load the region (if it exists) from it
          */
 
-        if ($fileToSearch !== null) {
+        foreach ($filesToSearch as $fileToSearch) {
             // Load data file
-
             $data = require $dataDir . $fileToSearch . '.php';
 
             if (isset($data[$region])) {

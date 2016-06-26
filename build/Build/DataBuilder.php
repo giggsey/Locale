@@ -68,6 +68,29 @@ EOT;
         $writtenCountries = array();
 
         foreach ($countries as $locale => $countryData) {
+            /*
+             * Compress file (if possible)
+             *
+             *  - Split up the locale into the sections
+             *  - Loop through each row in $countryData
+             *  - If the record exists, and is the same as a higher level, remove from this level
+             */
+
+            $fallbackParts = explode('-', str_replace('_', '-', $locale));
+            if (count($fallbackParts) > 1) {
+                array_pop($fallbackParts);
+
+                $newLocale = implode('-', $fallbackParts);
+
+                if (array_key_exists($newLocale, $countries)) {
+                    foreach ($countryData as $key => $value) {
+                        if (array_key_exists($key, $countries[$newLocale]) && $countries[$newLocale][$key] === $value) {
+                            unset($countryData[$key]);
+                        }
+                    }
+                }
+            }
+
             if (count($countryData) == 0) {
                 // Skip empty countries
                 continue;

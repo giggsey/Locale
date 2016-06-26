@@ -1,10 +1,10 @@
 {
   "main": {
-    "en": {
+    "en-GB": {
       "localeDisplayNames": {
         "territories": {
           "MFC": "My First Country",
-          "MSC": "My Second Country",
+          "MSC": "My Second Country is different here",
           "EU": "Ignored region",
           "GB-alt-short": "Ignored alternative",
           "001": "Ignored numerical territory code",

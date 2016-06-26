@@ -36,6 +36,7 @@ class DataBuilderTest extends \PHPUnit_Framework_TestCase
         $list = require $listFile;
 
         $this->assertArrayHasKey('en', $list);
+        $this->assertArrayHasKey('en-gb', $list);
         $this->assertArrayNotHasKey('en-150', $list, 'en-150 is part of the ignored locale list, so should be ignored');
         $this->assertArrayNotHasKey('empty', $list, 'empty has no territories defined, so should be ignored');
 
@@ -63,10 +64,31 @@ class DataBuilderTest extends \PHPUnit_Framework_TestCase
         $this->assertArrayHasKey('MFC', $data);
         $this->assertEquals('My First Country', $data['MFC']);
 
+        $this->assertArrayHasKey('MSC', $data);
+        $this->assertEquals('My Second Country', $data['MSC']);
+
         $this->assertArrayNotHasKey('EU', $data, 'EU is part of the ignored region list, so should be ignored');
         $this->assertArrayNotHasKey('GB-alt-short', $data, 'GB-alt-short is an alternative name, so should be ignored');
         $this->assertArrayNotHasKey('001', $data, '001 is a numerical territory name, so should be ignored');
         $this->assertArrayNotHasKey('CH', $data, 'CH has the same name as the key, so should be ignored');
+    }
+
+    /**
+     * @param string $outputDir Output directory
+     * @depends testGeneratingData
+     */
+    public function testGBData($outputDir)
+    {
+        $englishFile = $outputDir . 'en-gb.php';
+
+        $this->assertFileExists($englishFile);
+
+        $data = require $englishFile;
+
+        $this->assertArrayNotHasKey('MFC', $data);
+
+        $this->assertArrayHasKey('MSC', $data);
+        $this->assertEquals('My Second Country is different here', $data['MSC']);
     }
 
     /**
