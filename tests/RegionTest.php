@@ -2,7 +2,6 @@
 
 namespace Giggsey\Locale\Tests;
 
-
 use Giggsey\Locale\Locale;
 
 class RegionTest extends \PHPUnit_Framework_TestCase
@@ -247,6 +246,4 @@ class RegionTest extends \PHPUnit_Framework_TestCase
             array('en_gb', 'GB'),
         );
     }
-
-
 }

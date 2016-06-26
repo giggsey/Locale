@@ -51,7 +51,6 @@ $localeList = array();
 
 foreach (scandir($inputDir) as $item) {
     if (substr($item, 0, 1) !== '.' && is_dir($inputDir . $item)) {
-
         if (in_array($item, $ignoredLocales)) {
             // Skip over any ignored locales
             continue;

@@ -2,7 +2,6 @@
 
 namespace Giggsey\Locale\Tests;
 
-
 use Giggsey\Locale\Locale;
 
 class PrimaryLanguageTest extends \PHPUnit_Framework_TestCase

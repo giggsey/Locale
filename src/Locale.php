@@ -2,7 +2,6 @@
 
 namespace Giggsey\Locale;
 
-
 class Locale
 {
     protected static $dataDir = '../data/';
