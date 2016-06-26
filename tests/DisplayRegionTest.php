@@ -38,6 +38,9 @@ class DisplayRegionTest extends \PHPUnit_Framework_TestCase
     {
         return array(
             array('en-GB', 'en-GB', 'United Kingdom'),
+            array('en_GB', 'en-GB', 'United Kingdom'),
+            array('en-GB', 'en_GB', 'United Kingdom'),
+            array('en_GB', 'en_GB', 'United Kingdom'),
             array('fake-GB', 'en-GB', 'United Kingdom'),
             array('en-GB', 'en-US', 'United Kingdom'),
             array('en-GB', 'fr-FR', 'Royaume-Uni'),
