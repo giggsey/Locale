@@ -5,19 +5,20 @@ language: php
 matrix:
   allow_failures:
     - php: hhvm
+    - php: nightly
 
 php:
   - 5.3
   - 5.4
   - 5.5
   - 5.6
+  - 7.0
   - hhvm
-  - 7
+  - nightly
 
 before_script:
- - echo "memory_limit=2G" >> ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/travis.ini
- - wget http://getcomposer.org/composer.phar
- - php composer.phar install --no-interaction
+ - composer self-update
+ - composer install --no-interaction
  - mkdir -p build/logs
 
 script:

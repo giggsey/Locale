@@ -17,7 +17,7 @@ class Locale
     {
         $parts = explode('-', str_replace('_', '-', $locale));
 
-        return $parts[0];
+        return strtolower($parts[0]);
     }
 
     /**
@@ -28,7 +28,7 @@ class Locale
      */
     public static function getRegion($locale)
     {
-        $parts = explode('_', $locale);
+        $parts = explode('-', str_replace('_', '-', $locale));
 
         if (count($parts) === 1) {
             return '';
@@ -44,10 +44,17 @@ class Locale
             $region = 'US';
         }
 
-        return $region;
+        return strtoupper($region);
     }
 
-    public static function getDisplayRegion($locale, $in_locale)
+    /**
+     * Get the localised display name for the region of the input locale
+     *
+     * @param string $locale The locale to return a display region for
+     * @param string $inLocale Format locale to display the region name
+     * @return string Display name for the region, or an empty string if no result could be found
+     */
+    public static function getDisplayRegion($locale, $inLocale)
     {
         $dataDir = __DIR__ . DIRECTORY_SEPARATOR . static::$dataDir;
 
@@ -57,11 +64,11 @@ class Locale
         $regionList = require $dataDir . '_list.php';
 
         /*
-         * Loop through each part of the $in_locale, and see if we have data for that locale
+         * Loop through each part of the $inLocale, and see if we have data for that locale
          *
          * E.g zh-Hans-HK will look for zh-Hanks-HK, zh-Hanks, then finally zh
          */
-        $fallbackParts = explode('-', str_replace('_', '-', $in_locale));
+        $fallbackParts = explode('-', str_replace('_', '-', $inLocale));
         $fileToSearch = null;
 
         $i = count($fallbackParts);

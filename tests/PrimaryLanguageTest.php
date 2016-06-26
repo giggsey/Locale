@@ -18,26 +18,8 @@ class PrimaryLanguageTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @param string $locale Input locale
-     * @param string $language Expected output language
-     * @dataProvider dataUnderscoreOrDash
-     */
-    public function testUnderscoreOrDash($locale, $language)
-    {
-        $this->assertEquals($language, Locale::getPrimaryLanguage($locale));
-    }
-
-    public function dataUnderscoreOrDash()
-    {
-        return array(
-            array('en-GB', 'en'),
-            array('en_GB', 'en'),
-        );
-    }
-
-    /**
-     * @return array
      * @see testGetPrimaryLanguage
+     * @return array
      */
     public function dataListOfPrimaryLanguages()
     {
@@ -253,6 +235,32 @@ class PrimaryLanguageTest extends \PHPUnit_Framework_TestCase
             array('zh-TW', 'zh'),
             array('zu-ZA', 'zu'),
 
+            /*
+             * Edge cases
+             */
+            array('EN-gb', 'en'),
+        );
+    }
+
+    /**
+     * @param string $locale Input locale
+     * @param string $language Expected output language
+     * @dataProvider dataUnderscoreOrDash
+     */
+    public function testUnderscoreOrDash($locale, $language)
+    {
+        $this->assertEquals($language, Locale::getPrimaryLanguage($locale));
+    }
+
+    /**
+     * @see testUnderscoreOrDash
+     * @return array
+     */
+    public function dataUnderscoreOrDash()
+    {
+        return array(
+            array('en-GB', 'en'),
+            array('en_GB', 'en'),
         );
     }
 }
