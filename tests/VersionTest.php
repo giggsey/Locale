@@ -7,7 +7,6 @@
 
 namespace Giggsey\Locale\Tests;
 
-
 use Giggsey\Locale\Locale;
 
 class VersionTest extends \PHPUnit_Framework_TestCase
