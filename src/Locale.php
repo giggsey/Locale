@@ -2,15 +2,15 @@
 
 namespace Giggsey\Locale;
 
-
 class Locale
 {
     protected static $dataDir = '../data/';
 
     /**
-     * Gets the primary language for the input locale
+     * Gets the primary language for the input locale.
      *
      * @param string $locale Input locale (e.g. en-GB)
+     *
      * @return string Primary Language (e.g. en)
      */
     public static function getPrimaryLanguage($locale)
@@ -21,9 +21,10 @@ class Locale
     }
 
     /**
-     * Get the region for the input locale
+     * Get the region for the input locale.
      *
      * @param string $locale Input locale (e.g. de-CH-1991)
+     *
      * @return string Region (e.g. CH)
      */
     public static function getRegion($locale)
@@ -49,12 +50,12 @@ class Locale
 
     public static function getDisplayRegion($locale, $in_locale)
     {
-        $dataDir = __DIR__ . DIRECTORY_SEPARATOR . static::$dataDir;
+        $dataDir = __DIR__.DIRECTORY_SEPARATOR.static::$dataDir;
 
         // Convert $locale into a region
         $region = static::getRegion($locale);
 
-        $regionList = require $dataDir . '_list.php';
+        $regionList = require $dataDir.'_list.php';
 
         /*
          * Loop through each part of the $in_locale, and see if we have data for that locale
@@ -84,7 +85,7 @@ class Locale
         if ($fileToSearch !== null) {
             // Load data file
 
-            $data = require $dataDir . $fileToSearch . '.php';
+            $data = require $dataDir.$fileToSearch.'.php';
 
             if (isset($data[$region])) {
                 return $data[$region];

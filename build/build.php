@@ -1,45 +1,43 @@
 <?php
 /**
- *
  * @author giggsey
- * @package Locale
  */
 
 /*
  * @todo Move to argv
  */
 
-$inputDir = __DIR__ . '/../cldr-localenames-full/main/';
-$outputDir = __DIR__ . '/../data/';
+$inputDir = __DIR__.'/../cldr-localenames-full/main/';
+$outputDir = __DIR__.'/../data/';
 
 
 /*
  * Ignored Locales + Regions
  */
 
-$ignoredLocales = array(
+$ignoredLocales = [
     'en-US-POSIX',
     'en-001',
     'en-150',
     'es-419',
-);
+];
 
-$ignoredRegions = array(
-    'ZZ' // Unknown region
-);
+$ignoredRegions = [
+    'ZZ', // Unknown region
+];
 
 /*
  * Check directories
  */
 
 if (!is_dir($inputDir)) {
-    throw new InvalidArgumentException(sprintf("Unable to find input directory: %s", $inputDir));
+    throw new InvalidArgumentException(sprintf('Unable to find input directory: %s', $inputDir));
 }
 
 if (!is_dir($outputDir)) {
     // Try to create output directory
     if (mkdir($outputDir) === false) {
-        throw new RuntimeException(sprintf("Unable to create output directory: %s", $outputDir));
+        throw new RuntimeException(sprintf('Unable to create output directory: %s', $outputDir));
     }
 }
 
@@ -47,11 +45,10 @@ if (!is_dir($outputDir)) {
  * Load all locales from the source directory
  */
 
-$localeList = array();
+$localeList = [];
 
 foreach (scandir($inputDir) as $item) {
-    if (substr($item, 0, 1) !== '.' && is_dir($inputDir . $item)) {
-
+    if (substr($item, 0, 1) !== '.' && is_dir($inputDir.$item)) {
         if (in_array($item, $ignoredLocales)) {
             // Skip over any ignored locales
             continue;
@@ -66,13 +63,13 @@ foreach (scandir($inputDir) as $item) {
  * Loop through all locales, and load the territory list
  */
 
-$countries = array();
+$countries = [];
 
 foreach ($localeList as $locale) {
-    $data = json_decode(file_get_contents($inputDir . $locale . '/territories.json'), true);
+    $data = json_decode(file_get_contents($inputDir.$locale.'/territories.json'), true);
     $territoryList = $data['main'][$locale]['localeDisplayNames']['territories'];
 
-    $countries[$locale] = array();
+    $countries[$locale] = [];
 
     foreach ($territoryList as $territory => $name) {
         if (is_numeric($territory)) {
@@ -103,7 +100,7 @@ foreach ($localeList as $locale) {
  * Write each territory file
  */
 
-$writtenCountries = array();
+$writtenCountries = [];
 
 foreach ($countries as $locale => $country) {
     if (count($country) == 0) {
@@ -126,7 +123,7 @@ return $countryArray;
 
 php;
 
-    file_put_contents($outputDir . $locale . '.php', $fileContents);
+    file_put_contents($outputDir.$locale.'.php', $fileContents);
 
     $writtenCountries[$locale] = '';
 }
@@ -151,4 +148,4 @@ return $localeList;
 php;
 
 
-file_put_contents($outputDir . '_list.php', $fileContents);
+file_put_contents($outputDir.'_list.php', $fileContents);

@@ -19,7 +19,6 @@ class LocaleComparisonTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($intlLanguage, $localLanguage);
     }
 
-
     /**
      * @param $locale
      * @dataProvider dataListOfLocales
@@ -49,11 +48,11 @@ class LocaleComparisonTest extends \PHPUnit_Framework_TestCase
 
     public function dataDisplayRegion()
     {
-        $locales = array();
+        $locales = [];
 
         foreach ($this->getLocaleList() as $locale) {
             foreach ($this->getLocaleList() as $innerLocale) {
-                $locales[] = array($locale, $innerLocale);
+                $locales[] = [$locale, $innerLocale];
             }
         }
 
@@ -65,10 +64,10 @@ class LocaleComparisonTest extends \PHPUnit_Framework_TestCase
      */
     public function dataListOfLocales()
     {
-        $locales = array();
+        $locales = [];
 
         foreach ($this->getLocaleList() as $locale) {
-            $locales[] = array($locale);
+            $locales[] = [$locale];
         }
 
         return $locales;
@@ -78,15 +77,15 @@ class LocaleComparisonTest extends \PHPUnit_Framework_TestCase
     {
         $locales = \ResourceBundle::getLocales('');
 
-        $ignoreList = array(
+        $ignoreList = [
             'ar_001',
             'en_001',
             'en_150',
             'es_419',
             'yi_001',
-        );
+        ];
 
-        $returnArray = array();
+        $returnArray = [];
 
         foreach ($locales as $locale) {
             if (in_array($locale, $ignoreList)) {
