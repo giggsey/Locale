@@ -51,6 +51,7 @@ class DisplayRegionTest extends \PHPUnit_Framework_TestCase
             array('en-GB', 'zh', '英国'),
             array('en-GB', 'zh-Hans-HK', '英国'),
             array('en-GB', 'zh-Hant-HK', '英國'),
+            array('EN-gb', 'EN-gb', 'United Kingdom'),
         );
     }
 

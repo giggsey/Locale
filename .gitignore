@@ -2,3 +2,4 @@ vendor/
 composer.phar
 composer.lock
 build/logs/
+cldr-localenames-full/

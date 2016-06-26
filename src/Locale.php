@@ -72,7 +72,7 @@ class Locale
 
         $i = count($fallbackParts);
         while ($i > 0) {
-            $searchLocale = implode('-', $fallbackParts);
+            $searchLocale = strtolower(implode('-', $fallbackParts));
 
             if (isset($regionList[$searchLocale])) {
                 $fileToSearch = $searchLocale;
@@ -98,5 +98,12 @@ class Locale
         }
 
         return '';
+    }
+
+    public static function getVersion()
+    {
+        $file = __DIR__ . DIRECTORY_SEPARATOR . static::$dataDir . '_version.php';
+
+        return require $file;
     }
 }
