@@ -7,20 +7,6 @@ use Giggsey\Locale\Locale;
 class LocaleComparisonTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @param string $locale
-     * @dataProvider dataListOfLocales
-     */
-    public function testGetPrimaryLanguage($locale)
-    {
-        $localLanguage = Locale::getPrimaryLanguage($locale);
-
-        $intlLanguage = \Locale::getPrimaryLanguage($locale);
-
-        $this->assertEquals($intlLanguage, $localLanguage);
-    }
-
-
-    /**
      * @param $locale
      * @dataProvider dataListOfLocales
      */

@@ -15,7 +15,7 @@ class Locale
      */
     public static function getPrimaryLanguage($locale)
     {
-        $parts = explode('_', $locale);
+        $parts = explode('-', str_replace('_', '-', $locale));
 
         return $parts[0];
     }
