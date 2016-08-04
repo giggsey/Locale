@@ -1,6 +1,6 @@
 {
   "name": "giggsey/locale",
-  "description": "Basic implementation of Locale functions required by libphonenumber-for-php",
+  "description": "Locale functions required by libphonenumber-for-php",
   "minimum-stability": "stable",
   "license": "MIT",
   "authors": [

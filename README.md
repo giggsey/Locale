@@ -1,7 +1,12 @@
-# Locale
+# Locale [![Build Status](https://img.shields.io/travis/giggsey/Locale.svg?style=flat-square)](https://travis-ci.org/giggsey/Locale) [![Coverage Status](https://img.shields.io/coveralls/giggsey/Locale.svg?style=flat-square)](https://coveralls.io/r/giggsey/Locale) [![StyleCI](https://styleci.io/repos/24566760/shield)](https://styleci.io/repos/24566760)
 
-[![Build Status](https://travis-ci.org/giggsey/Locale.svg?branch=master)](https://travis-ci.org/giggsey/Locale) [![Coverage Status](https://coveralls.io/repos/giggsey/Locale/badge.png)](https://coveralls.io/r/giggsey/Locale) [![StyleCI](https://styleci.io/repos/24566760/shield)](https://styleci.io/repos/24566760)
+[![Total Downloads](https://poser.pugx.org/giggsey/locale/downloads?format=flat-square)](https://packagist.org/packages/giggsey/locale) [![Latest Stable Version](https://poser.pugx.org/giggsey/locale/v/stable?format=flat-square)](https://packagist.org/packages/giggsey/locale) [![License](https://poser.pugx.org/giggsey/locale/license?format=flat-square)](https://packagist.org/packages/giggsey/locale)
 
+A library providing up to date [CLDR](http://cldr.unicode.org/). Primarily as a requirement of [libphonenumber-for-php](https://github.com/giggsey/libphonenumber-for-php).
+
+## Reasoning
+
+This was created because [libphonenumber-for-php](https://github.com/giggsey/libphonenumber-for-php) required the [intl](http://php.net/intl) extension to use the Geo Coder. The extension is not installed by default, and can be a hurdle for users. It also relies on the [CLDR](http://cldr.unicord.org) data provided by the Operating System, which is quite often out of date.
 
 ## Generating data
 
