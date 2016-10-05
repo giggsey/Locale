@@ -43,6 +43,8 @@ EOT;
         'BV', // Bouvet Island (Uninhabited)
         'HM', // Heard & McDonald Islands (Uninhabited)
         'CP', // Clipperton Island (uninhabited)
+        'EZ', // Eurozone
+        'UN', // United Nations
     );
 
     /**
