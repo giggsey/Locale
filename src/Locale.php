@@ -104,4 +104,38 @@ class Locale
 
         return require $file;
     }
+
+    /**
+     * Return a list of all the supported locales
+     *
+     * @return string[]
+     */
+    public static function getSupportedLocales()
+    {
+        $dataDir = __DIR__ . DIRECTORY_SEPARATOR . static::$dataDir;
+        $regionList = require $dataDir . '_list.php';
+
+        return array_keys($regionList);
+    }
+
+    /**
+     * Load a list of all countries supported by a particular Locale
+     *
+     * @param string $locale
+     * @return string[] Associative array of Country Code => Country Name
+     * @throws \RuntimeException On an invalid region
+     */
+    public static function getAllCountriesForLocale($locale)
+    {
+        $dataDir = __DIR__ . DIRECTORY_SEPARATOR . static::$dataDir;
+        $regionList = require $dataDir . '_list.php';
+
+        if (!isset($regionList[$locale])) {
+            throw new \RuntimeException("Locale is not supported");
+        }
+
+        $data = require $dataDir . $locale . '.php';
+
+        return $data;
+    }
 }
