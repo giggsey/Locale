@@ -134,8 +134,41 @@ class Locale
             throw new \RuntimeException("Locale is not supported");
         }
 
-        $data = require $dataDir . $locale . '.php';
+        /*
+         * Loop through each part of the $locale, and load data for that locale
+         *
+         * E.g zh-Hans-HK will look for zh-Hanks-HK, zh-Hanks, then finally zh
+         */
+        $fallbackParts = explode('-', str_replace('_', '-', $locale));
+        $filesToSearch = array();
 
-        return $data;
+        $i = count($fallbackParts);
+        while ($i > 0) {
+            $searchLocale = strtolower(implode('-', $fallbackParts));
+
+            if (isset($regionList[$searchLocale])) {
+                $filesToSearch[] = $searchLocale;
+            }
+
+            array_pop($fallbackParts);
+            $i--;
+        }
+
+        /*
+         * Load data files, and load the region (if it exists) from it
+         */
+
+        $returnData = array();
+
+        foreach ($filesToSearch as $fileToSearch) {
+            // Load data file
+            $data = require $dataDir . $fileToSearch . '.php';
+
+            $returnData += $data;
+        }
+
+        ksort($returnData);
+
+        return $returnData;
     }
 }

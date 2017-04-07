@@ -16,6 +16,19 @@ class CountryListTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals('United Kingdom', $countryList['GB']);
     }
 
+    public function testCountryListInheriting()
+    {
+        $countryList = Locale::getAllCountriesForLocale('es-bz');
+
+        $this->assertInternalType('array', $countryList);
+
+        $this->assertArrayHasKey('TA', $countryList);
+        $this->assertEquals('Tristán da Cunha', $countryList['TA']);
+
+        $this->assertArrayHasKey('GB', $countryList);
+        $this->assertEquals('Reino Unido', $countryList['GB']);
+    }
+
     /**
      * @expectedException \RuntimeException
      * @expectedExceptionMessage Locale is not supported
