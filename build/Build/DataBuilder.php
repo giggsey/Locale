@@ -48,6 +48,8 @@ EOT;
         'CP', // Clipperton Island (uninhabited)
         'EZ', // Eurozone
         'UN', // United Nations
+        'XA', // Pseudo-Accents
+        'XB', // Pseudo-Bidi
     );
 
     /**
