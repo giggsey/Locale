@@ -10,5 +10,15 @@
  */
 
 return array (
-  'GB' => 'Rywvaneth Unys',
+  'BR' => 'Brazil',
+  'CN' => 'Tsina',
+  'DE' => 'Alemanya',
+  'FR' => 'Pransiya',
+  'GB' => 'Hiniusang Gingharian',
+  'IN' => 'India',
+  'IT' => 'Italya',
+  'JP' => 'Hapon',
+  'PH' => 'Pilipinas',
+  'RU' => 'Russia',
+  'US' => 'Estados Unidos',
 );
