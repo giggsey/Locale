@@ -3,8 +3,8 @@
 
     <property name="build.script" value="build/build.php"/>
 
-    <property name="git.url" value="https://github.com/unicode-cldr/cldr-localenames-full.git"/>
-    <property name="git.path" value="cldr-localenames-full"/>
+    <property name="git.url" value="https://github.com/unicode-org/cldr-json.git"/>
+    <property name="git.path" value="cldr-json"/>
 
     <loadfile property="metadata.version" file="CLDR-VERSION.txt">
         <filterchain>
@@ -18,7 +18,7 @@
     <property name="data" value="data/"/>
 
     <target name="test" description="Run unit tests" depends="compile">
-        <exec passthru="true" command="vendor/bin/phpunit"/>
+        <exec passthru="true" command="composer run test"/>
     </target>
 
     <target name="compile" description="Build data"
@@ -43,7 +43,8 @@
                 <echo>Cloning repository</echo>
                 <gitclone
                         repository="${git.url}"
-                        targetPath="${git.path}"/>
+                        targetPath="${git.path}"
+                        branch="master"/>
             </then>
         </if>
 
@@ -59,7 +60,7 @@
         <exec executable="${build.script}" passthru="true">
             <arg value="Build"/>
             <arg value="${metadata.version}"/>
-            <arg value="${git.path}/main/"/>
+            <arg value="${git.path}/cldr-json/cldr-localenames-full/main/"/>
             <arg value="${data}"/>
         </exec>
     </target>

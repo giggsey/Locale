@@ -2,12 +2,13 @@
 
 namespace Giggsey\Locale\Tests;
 
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
 use Symfony\Component\Process\Process;
 
-class PhingCompareTest extends \PHPUnit_Framework_TestCase
+class PhingCompareTest extends TestCase
 {
     protected static $outputDir;
     protected static $backupDir;
@@ -35,7 +36,7 @@ class PhingCompareTest extends \PHPUnit_Framework_TestCase
     public function testRunningPhing()
     {
         // Run phing compile
-        $process = new Process(__DIR__ . '/../vendor/bin/phing compile');
+        $process = new Process(array(__DIR__ . '/../vendor/bin/phing', 'compile'));
         $process->setWorkingDirectory(__DIR__ . '/../');
         $process->run();
 

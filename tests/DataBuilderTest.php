@@ -3,10 +3,11 @@
 namespace Giggsey\Locale\Tests;
 
 use Giggsey\Locale\Build\DataBuilder;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\Filesystem\Filesystem;
 
-class DataBuilderTest extends \PHPUnit_Framework_TestCase
+class DataBuilderTest extends TestCase
 {
     protected static $outputDir;
 

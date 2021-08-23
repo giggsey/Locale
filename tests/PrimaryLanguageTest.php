@@ -3,8 +3,9 @@
 namespace Giggsey\Locale\Tests;
 
 use Giggsey\Locale\Locale;
+use PHPUnit\Framework\TestCase;
 
-class PrimaryLanguageTest extends \PHPUnit_Framework_TestCase
+class PrimaryLanguageTest extends TestCase
 {
     /**
      * @param string $locale Input locale

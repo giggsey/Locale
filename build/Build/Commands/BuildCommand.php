@@ -42,5 +42,7 @@ class BuildCommand extends Command
             $input->getArgument('OutputDirectory'),
             $output
         );
+
+        return 0;
     }
 }
