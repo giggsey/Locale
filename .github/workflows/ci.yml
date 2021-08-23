@@ -9,7 +9,7 @@ on:
       - 'README.md'
 
 env:
-  COMPOSER_FLAGS: "--ansi --no-interaction --no-progress --no-suggest --prefer-dist"
+  COMPOSER_FLAGS: "--ansi --no-interaction --no-progress --prefer-dist"
   COVERAGE_FLAGS: "--coverage-text --coverage-clover build/logs/clover.xml"
 
 jobs:
@@ -23,7 +23,6 @@ jobs:
           - "7.3"
           - "7.4"
           - "8.0"
-          - "8.1"
         include:
           - php-version: 7.4
             coverage: coverage
