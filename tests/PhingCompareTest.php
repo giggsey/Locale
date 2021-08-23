@@ -2,6 +2,7 @@
 
 namespace Giggsey\Locale\Tests;
 
+use PHPUnit\Exception;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
@@ -84,11 +85,19 @@ class PhingCompareTest extends TestCase
             /** @var $file SplFileInfo */
             $this->assertFileExists(static::$outputDir . $file->getFilename());
 
+            try {
             $this->assertEquals(
                 md5_file($file->getRealPath()),
                 md5_file(static::$outputDir . '/' . $file->getFilename()),
                 $file->getFilename() . ' md5 should match'
             );
+            } catch (Exception $e) {
+                echo '# ' . $file->getRealPath() . PHP_EOL;
+                echo file_get_contents($file->getRealPath()) . PHP_EOL;
+                echo '# ' . static::$outputDir . '/' . $file->getFilename() . PHP_EOL;
+                echo file_get_contents(static::$outputDir . '/' . $file->getFilename()) . PHP_EOL;
+                throw $e;
+            }
         }
     }
 }
