@@ -51,7 +51,7 @@
   "scripts": {
     "test": [
       "@putenv SYMFONY_PHPUNIT_REMOVE_RETURN_TYPEHINT=1",
-      "vendor/bin/simple-phpunit"
+      "vendor/bin/simple-phpunit --"
     ],
     "metadata": "vendor/bin/phing compile"
   }
