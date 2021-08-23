@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class SupportedLocaleTest extends TestCase
 {
-    public function testGettingSupportedLocales()
+    public function testGettingSupportedLocales(): void
     {
         $list = Locale::getSupportedLocales();
 

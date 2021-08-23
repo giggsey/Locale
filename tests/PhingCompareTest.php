@@ -13,7 +13,7 @@ class PhingCompareTest extends TestCase
     protected static $outputDir;
     protected static $backupDir;
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         static::$outputDir = __DIR__ . '/../data/';
         static::$backupDir = __DIR__ . '/../data-backup/';
@@ -23,7 +23,7 @@ class PhingCompareTest extends TestCase
         $filesystem->rename(static::$outputDir, static::$backupDir);
     }
 
-    public static function tearDownAfterClass()
+    public static function tearDownAfterClass(): void
     {
         if (static::$outputDir && static::$backupDir) {
             // Copy data directory to somewhere else
@@ -33,15 +33,20 @@ class PhingCompareTest extends TestCase
         }
     }
 
-    public function testRunningPhing()
+    public function testRunningPhing(): void
     {
         // Run phing compile
-        $process = new Process(array(__DIR__ . '/../vendor/bin/phing', 'compile'));
+        $process = new Process([__DIR__ . '/../vendor/bin/phing', 'compile']);
         $process->setWorkingDirectory(__DIR__ . '/../');
         $process->run();
 
         // Print this for keepsakes
+        echo PHP_EOL;
         echo $process->getOutput();
+        echo PHP_EOL;
+        echo $process->getErrorOutput();
+        echo PHP_EOL;
+
 
         $this->assertTrue($process->isSuccessful());
     }
@@ -49,7 +54,7 @@ class PhingCompareTest extends TestCase
     /**
      * @depends testRunningPhing
      */
-    public function testComparingDirectories()
+    public function testComparingDirectories(): void
     {
         /*
          * Load all files in both directories, and compare
@@ -58,7 +63,7 @@ class PhingCompareTest extends TestCase
         $outputFinder = new Finder();
         $outputFinder->files()->in(static::$outputDir)->sortByName();
 
-        $outputFiles = array();
+        $outputFiles = [];
         foreach ($outputFinder as $file) {
             /** @var $file SplFileInfo */
             $outputFiles[] = $file->getFilename();
@@ -67,7 +72,7 @@ class PhingCompareTest extends TestCase
         $backupFinder = new Finder();
         $backupFinder->files()->in(static::$backupDir)->sortByName();
 
-        $backupFiles = array();
+        $backupFiles = [];
         foreach ($backupFinder as $file) {
             /** @var $file SplFileInfo */
             $backupFiles[] = $file->getFilename();

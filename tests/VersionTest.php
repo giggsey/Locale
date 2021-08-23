@@ -12,14 +12,14 @@ use PHPUnit\Framework\TestCase;
 
 class VersionTest extends TestCase
 {
-    public function testGetVersion()
+    public function testGetVersion(): void
     {
         $version = null;
 
         $currentVersionContents = file(__DIR__ . '/../CLDR-VERSION.txt');
 
         foreach ($currentVersionContents as $line) {
-            if (trim($line) !== '' && substr($line, 0, 1) !== '#') {
+            if (trim($line) !== '' && strpos($line, '#') !== 0) {
                 $version = trim($line);
                 break;
             }

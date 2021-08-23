@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class CountryListTest extends TestCase
 {
-    public function testCountryListForEn()
+    public function testCountryListForEn(): void
     {
         $countryList = Locale::getAllCountriesForLocale('en');
 
@@ -17,7 +17,7 @@ class CountryListTest extends TestCase
         $this->assertEquals('United Kingdom', $countryList['GB']);
     }
 
-    public function testCountryListInheriting()
+    public function testCountryListInheriting(): void
     {
         $countryList = Locale::getAllCountriesForLocale('es-bz');
 
@@ -30,7 +30,7 @@ class CountryListTest extends TestCase
         $this->assertEquals('Reino Unido', $countryList['GB']);
     }
 
-    public function testCountryListForInvalidLocale()
+    public function testCountryListForInvalidLocale(): void
     {
         $this->expectException('RuntimeException');
         $this->expectExceptionMessage('Locale is not supported');
