@@ -2,6 +2,7 @@ vendor/
 composer.phar
 composer.lock
 build/logs/
-cldr-localenames-full/
+cldr-json/
 data-git/
 tests/testOutput/
+/.phpunit.result.cache

@@ -3,14 +3,15 @@
 namespace Giggsey\Locale\Tests;
 
 use Giggsey\Locale\Locale;
+use PHPUnit\Framework\TestCase;
 
-class SupportedLocaleTest extends \PHPUnit_Framework_TestCase
+class SupportedLocaleTest extends TestCase
 {
-    public function testGettingSupportedLocales()
+    public function testGettingSupportedLocales(): void
     {
         $list = Locale::getSupportedLocales();
 
-        $this->assertInternalType('array', $list);
+        $this->assertIsArray($list);
 
         $this->assertContains('en', $list);
         $this->assertContains('zu', $list);

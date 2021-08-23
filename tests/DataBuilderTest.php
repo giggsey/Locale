@@ -3,19 +3,20 @@
 namespace Giggsey\Locale\Tests;
 
 use Giggsey\Locale\Build\DataBuilder;
+use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\Filesystem\Filesystem;
 
-class DataBuilderTest extends \PHPUnit_Framework_TestCase
+class DataBuilderTest extends TestCase
 {
     protected static $outputDir;
 
-    public static function setUpBeforeClass()
+    public static function setUpBeforeClass(): void
     {
         static::$outputDir = self::createTempDirectory();
     }
 
-    public static function tearDownAfterClass()
+    public static function tearDownAfterClass(): void
     {
         if (static::$outputDir) {
             $fileSystem = new Filesystem();
@@ -23,7 +24,7 @@ class DataBuilderTest extends \PHPUnit_Framework_TestCase
         }
     }
 
-    public function testGeneratingData()
+    public function testGeneratingData(): string
     {
         $dataBuilder = new DataBuilder();
 
@@ -53,7 +54,7 @@ class DataBuilderTest extends \PHPUnit_Framework_TestCase
      * @param string $outputDir Output directory
      * @depends testGeneratingData
      */
-    public function testEnglishData($outputDir)
+    public function testEnglishData(string $outputDir): void
     {
         $englishFile = $outputDir . 'en.php';
 
@@ -77,7 +78,7 @@ class DataBuilderTest extends \PHPUnit_Framework_TestCase
      * @param string $outputDir Output directory
      * @depends testGeneratingData
      */
-    public function testGBData($outputDir)
+    public function testGBData(string $outputDir): void
     {
         $englishFile = $outputDir . 'en-gb.php';
 
@@ -96,7 +97,7 @@ class DataBuilderTest extends \PHPUnit_Framework_TestCase
      * @link http://stackoverflow.com/a/1707859
      * @return string
      */
-    private static function createTempDirectory()
+    private static function createTempDirectory(): string
     {
         $tempFile = tempnam(sys_get_temp_dir(), 'LocaleTest');
 

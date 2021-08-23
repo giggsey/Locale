@@ -3,8 +3,9 @@
 namespace Giggsey\Locale\Tests;
 
 use Giggsey\Locale\Locale;
+use PHPUnit\Framework\TestCase;
 
-class DisplayRegionTest extends \PHPUnit_Framework_TestCase
+class DisplayRegionTest extends TestCase
 {
     /**
      * @param string $locale
@@ -12,7 +13,7 @@ class DisplayRegionTest extends \PHPUnit_Framework_TestCase
      * @param string $expectedRegion
      * @dataProvider dataDisplayRegions
      */
-    public function testGetDisplayRegion($locale, $inLocale, $expectedRegion)
+    public function testGetDisplayRegion(string $locale, string $inLocale, string $expectedRegion): void
     {
         $this->assertEquals(
             $expectedRegion,
@@ -25,7 +26,7 @@ class DisplayRegionTest extends \PHPUnit_Framework_TestCase
      * @see testGetDisplayRegion
      * @return array
      */
-    public function dataDisplayRegions()
+    public function dataDisplayRegions(): array
     {
         return array_merge(
             $this->dataForUnitedKingdom(),
@@ -35,58 +36,58 @@ class DisplayRegionTest extends \PHPUnit_Framework_TestCase
         );
     }
 
-    protected function dataForUnitedKingdom()
+    protected function dataForUnitedKingdom(): array
     {
-        return array(
-            array('en-GB', 'en-GB', 'United Kingdom'),
-            array('en_GB', 'en-GB', 'United Kingdom'),
-            array('en-GB', 'en_GB', 'United Kingdom'),
-            array('en_GB', 'en_GB', 'United Kingdom'),
-            array('fake-GB', 'en-GB', 'United Kingdom'),
-            array('en-GB', 'en-US', 'United Kingdom'),
-            array('en-GB', 'fr-FR', 'Royaume-Uni'),
-            array('en-GB', 'fr-CH', 'Royaume-Uni'),
-            array('en-GB', 'de-DE', 'Vereinigtes Königreich'),
-            array('en-GB', 'de-CH', 'Grossbritannien'),
-            array('en-GB', 'dz', 'ཡུ་ནཱའི་ཊེཌ་ ཀིང་ཌམ'),
-            array('en-GB', 'ro', 'Regatul Unit'),
-            array('en-GB', 'ru', 'Великобритания'),
-            array('en-GB', 'ru-UA', 'Великобритания'),
-            array('en-GB', 'zh', '英国'),
-            array('en-GB', 'zh-Hans-HK', '英国'),
-            array('en-GB', 'zh-Hant-HK', '英國'),
-            array('EN-gb', 'EN-gb', 'United Kingdom'),
-        );
+        return [
+            ['en-GB', 'en-GB', 'United Kingdom'],
+            ['en_GB', 'en-GB', 'United Kingdom'],
+            ['en-GB', 'en_GB', 'United Kingdom'],
+            ['en_GB', 'en_GB', 'United Kingdom'],
+            ['fake-GB', 'en-GB', 'United Kingdom'],
+            ['en-GB', 'en-US', 'United Kingdom'],
+            ['en-GB', 'fr-FR', 'Royaume-Uni'],
+            ['en-GB', 'fr-CH', 'Royaume-Uni'],
+            ['en-GB', 'de-DE', 'Vereinigtes Königreich'],
+            ['en-GB', 'de-CH', 'Grossbritannien'],
+            ['en-GB', 'dz', 'ཡུ་ནཱའི་ཊེཌ་ ཀིང་ཌམ'],
+            ['en-GB', 'ro', 'Regatul Unit'],
+            ['en-GB', 'ru', 'Великобритания'],
+            ['en-GB', 'ru-UA', 'Великобритания'],
+            ['en-GB', 'zh', '英国'],
+            ['en-GB', 'zh-Hans-HK', '英国'],
+            ['en-GB', 'zh-Hant-HK', '英國'],
+            ['EN-gb', 'EN-gb', 'United Kingdom'],
+        ];
     }
 
-    protected function dataForGermany()
+    protected function dataForGermany(): array
     {
-        return array(
-            array('-de', 'en-GB', 'Germany'),
-            array('de-DE', 'en', 'Germany'),
-            array('de-DE', 'en-GB', 'Germany'),
-            array('de-DE', 'en-US', 'Germany'),
-            array('de-DE', 'de', 'Deutschland'),
-            array('de-DE', 'de-DE', 'Deutschland'),
-            array('de-DE', 'ru', 'Германия'),
-            array('de-DE', 'fr', 'Allemagne'),
-        );
+        return [
+            ['-de', 'en-GB', 'Germany'],
+            ['de-DE', 'en', 'Germany'],
+            ['de-DE', 'en-GB', 'Germany'],
+            ['de-DE', 'en-US', 'Germany'],
+            ['de-DE', 'de', 'Deutschland'],
+            ['de-DE', 'de-DE', 'Deutschland'],
+            ['de-DE', 'ru', 'Германия'],
+            ['de-DE', 'fr', 'Allemagne'],
+        ];
     }
 
-    protected function dataForMissingEntries()
+    protected function dataForMissingEntries(): array
     {
-        return array(
-            array('-rs', 'en', 'Serbia'),
-            array('-rs', 'ee', ''), // PHP returns 'RS' here, which I think is wrong...
-        );
+        return [
+            ['-rs', 'en', 'Serbia'],
+            ['-rs', 'ee', ''], // PHP returns 'RS' here, which I think is wrong...
+        ];
     }
 
-    protected function dataForInvalidRegions()
+    protected function dataForInvalidRegions(): array
     {
-        return array(
-            array('fake-too', 'en', ''),
-            array('en', 'en-GB', ''),
-            array('en-GB', 'fake-GB', ''),
-        );
+        return [
+            ['fake-too', 'en', ''],
+            ['en', 'en-GB', ''],
+            ['en-GB', 'fake-GB', ''],
+        ];
     }
 }
