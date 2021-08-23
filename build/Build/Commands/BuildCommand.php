@@ -16,7 +16,7 @@ class BuildCommand extends Command
             ->setName('Build')
             ->setDescription('Build CLDR data files')
             ->setDefinition(
-                array(
+                [
                     new InputArgument('Version', InputArgument::REQUIRED, 'Version of the CLDR data'),
                     new InputArgument(
                         'InputDirectory',
@@ -28,7 +28,7 @@ class BuildCommand extends Command
                         InputArgument::REQUIRED,
                         'The output directory where the generated data will be stored'
                     ),
-                )
+                ]
             );
     }
 
