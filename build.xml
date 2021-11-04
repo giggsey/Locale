@@ -44,7 +44,7 @@
                 <gitclone
                         repository="${git.url}"
                         targetPath="${git.path}"
-                        branch="master"/>
+                        branch="main"/>
             </then>
         </if>
 
