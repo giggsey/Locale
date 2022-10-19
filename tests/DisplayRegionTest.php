@@ -48,7 +48,7 @@ class DisplayRegionTest extends TestCase
             ['en-GB', 'fr-FR', 'Royaume-Uni'],
             ['en-GB', 'fr-CH', 'Royaume-Uni'],
             ['en-GB', 'de-DE', 'Vereinigtes Königreich'],
-            ['en-GB', 'de-CH', 'Grossbritannien'],
+            ['en-GB', 'de-CH', 'Vereinigtes Königreich'],
             ['en-GB', 'dz', 'ཡུ་ནཱའི་ཊེཌ་ ཀིང་ཌམ'],
             ['en-GB', 'ro', 'Regatul Unit'],
             ['en-GB', 'ru', 'Великобритания'],
