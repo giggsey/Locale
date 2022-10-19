@@ -24,8 +24,9 @@ jobs:
           - "7.4"
           - "8.0"
           - "8.1"
+          - "8.2"
         include:
-          - php-version: 7.4
+          - php-version: 8.1
             coverage: coverage
     steps:
       - name: Checkout
@@ -65,15 +66,6 @@ jobs:
       - name: Test with phpunit (without coverage)
         if: "matrix.coverage != 'coverage'"
         run: composer run test -- --verbose
-      - name: Upload code coverage to Scrutinize
-        if: steps.phpunit-coverage.outcome == 'success'
-        uses: nick-invision/retry@v1
-        with:
-          timeout_minutes: 10
-          max_attempts: 3
-          command: |
-            wget -q https://scrutinizer-ci.com/ocular.phar
-            php ocular.phar code-coverage:upload --format=php-clover ./build/logs/clover.xml
       - name: Submit Coveralls
         if: steps.phpunit-coverage.outcome == 'success'
         uses: nick-invision/retry@v1
