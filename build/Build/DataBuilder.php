@@ -174,7 +174,14 @@ EOT;
         $countries = [];
 
         foreach ($localeList as $locale) {
-            $data = json_decode(file_get_contents($inputDir . $locale . '/territories.json'), true);
+            $path = $inputDir . $locale . '/territories.json';
+
+            if (!file_exists($path)) {
+                // Skip this locale
+                continue;
+            }
+
+            $data = json_decode(file_get_contents($path), true);
             $territoryList = $data['main'][$locale]['localeDisplayNames']['territories'];
 
             $countries[$locale] = [];
