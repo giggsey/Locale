@@ -45,7 +45,7 @@ class DataBuilderTest extends TestCase
         $this->assertFileExists($versionFile);
         $version = require $versionFile;
 
-        $this->assertEquals('1', $version);
+        $this->assertSame('1', $version);
 
         return $outputDir;
     }
@@ -63,10 +63,10 @@ class DataBuilderTest extends TestCase
         $data = require $englishFile;
 
         $this->assertArrayHasKey('MFC', $data);
-        $this->assertEquals('My First Country', $data['MFC']);
+        $this->assertSame('My First Country', $data['MFC']);
 
         $this->assertArrayHasKey('MSC', $data);
-        $this->assertEquals('My Second Country', $data['MSC']);
+        $this->assertSame('My Second Country', $data['MSC']);
 
         $this->assertArrayNotHasKey('EU', $data, 'EU is part of the ignored region list, so should be ignored');
         $this->assertArrayNotHasKey('GB-alt-short', $data, 'GB-alt-short is an alternative name, so should be ignored');
@@ -89,7 +89,7 @@ class DataBuilderTest extends TestCase
         $this->assertArrayNotHasKey('MFC', $data);
 
         $this->assertArrayHasKey('MSC', $data);
-        $this->assertEquals('My Second Country is different here', $data['MSC']);
+        $this->assertSame('My Second Country is different here', $data['MSC']);
     }
 
     /**

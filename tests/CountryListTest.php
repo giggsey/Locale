@@ -14,7 +14,7 @@ class CountryListTest extends TestCase
         $this->assertIsArray($countryList);
 
         $this->assertArrayHasKey('GB', $countryList);
-        $this->assertEquals('United Kingdom', $countryList['GB']);
+        $this->assertSame('United Kingdom', $countryList['GB']);
     }
 
     public function testCountryListInheriting(): void
@@ -24,10 +24,10 @@ class CountryListTest extends TestCase
         $this->assertIsArray($countryList);
 
         $this->assertArrayHasKey('TA', $countryList);
-        $this->assertEquals('Tristán da Cunha', $countryList['TA']);
+        $this->assertSame('Tristán da Cunha', $countryList['TA']);
 
         $this->assertArrayHasKey('GB', $countryList);
-        $this->assertEquals('Reino Unido', $countryList['GB']);
+        $this->assertSame('Reino Unido', $countryList['GB']);
     }
 
     public function testCountryListForInvalidLocale(): void

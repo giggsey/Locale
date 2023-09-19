@@ -14,7 +14,7 @@ class RegionTest extends TestCase
      */
     public function testGetRegion(string $locale, string $expectedRegion): void
     {
-        $this->assertEquals($expectedRegion, Locale::getRegion($locale));
+        $this->assertSame($expectedRegion, Locale::getRegion($locale));
     }
 
     /**

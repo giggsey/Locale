@@ -15,7 +15,7 @@ class DisplayRegionTest extends TestCase
      */
     public function testGetDisplayRegion(string $locale, string $inLocale, string $expectedRegion): void
     {
-        $this->assertEquals(
+        $this->assertSame(
             $expectedRegion,
             Locale::getDisplayRegion($locale, $inLocale),
             "getDisplayRegion with $locale and $inLocale"

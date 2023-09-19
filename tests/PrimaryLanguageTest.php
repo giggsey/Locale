@@ -14,7 +14,7 @@ class PrimaryLanguageTest extends TestCase
      */
     public function testGetPrimaryLanguage(string $locale, string $language): void
     {
-        $this->assertEquals($language, Locale::getPrimaryLanguage($locale));
+        $this->assertSame($language, Locale::getPrimaryLanguage($locale));
     }
 
     /**
@@ -249,7 +249,7 @@ class PrimaryLanguageTest extends TestCase
      */
     public function testUnderscoreOrDash(string $locale, string $language): void
     {
-        $this->assertEquals($language, Locale::getPrimaryLanguage($locale));
+        $this->assertSame($language, Locale::getPrimaryLanguage($locale));
     }
 
     /**
