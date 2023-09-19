@@ -26,6 +26,6 @@ class VersionTest extends TestCase
         }
 
         $this->assertNotNull($version);
-        $this->assertEquals($version, Locale::getVersion());
+        $this->assertSame($version, Locale::getVersion());
     }
 }
