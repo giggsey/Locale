@@ -24,7 +24,7 @@ class CountryListTest extends TestCase
         $this->assertIsArray($countryList);
 
         $this->assertArrayHasKey('TA', $countryList);
-        $this->assertSame('Tristán da Cunha', $countryList['TA']);
+        $this->assertSame('Tristán de Acuña', $countryList['TA']);
 
         $this->assertArrayHasKey('GB', $countryList);
         $this->assertSame('Reino Unido', $countryList['GB']);
