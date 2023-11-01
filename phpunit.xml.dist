@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<phpunit bootstrap="./vendor/autoload.php"
-         colors="true">
-
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" bootstrap="./vendor/autoload.php" colors="true"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.3/phpunit.xsd">
+    <coverage>
+        <include>
+            <directory suffix=".php">./src/</directory>
+            <file>./build/Build/DataBuilder.php</file>
+        </include>
+    </coverage>
     <testsuites>
         <testsuite name="Tests">
             <directory>./tests/</directory>
         </testsuite>
     </testsuites>
-
-    <filter>
-        <whitelist>
-            <directory suffix=".php">./src/</directory>
-            <file>./build/Build/DataBuilder.php</file>
-        </whitelist>
-    </filter>
-
 </phpunit>
