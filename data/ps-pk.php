@@ -1,6 +1,6 @@
 <?php
 /**
- * Locale @generated from CLDR version 44.0.0
+ * Locale @generated from CLDR version 45.0.0
  * See README.md for more information.
  *
  * @internal

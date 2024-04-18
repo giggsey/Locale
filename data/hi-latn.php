@@ -1,6 +1,6 @@
 <?php
 /**
- * Locale @generated from CLDR version 44.0.0
+ * Locale @generated from CLDR version 45.0.0
  * See README.md for more information.
  *
  * @internal
@@ -116,7 +116,7 @@ return array (
   'IE' => 'Ireland',
   'IL' => 'Israel',
   'IM' => 'Isle of Man',
-  'IN' => 'India',
+  'IN' => 'Bharat',
   'IO' => 'British Indian Ocean Territory',
   'IQ' => 'Iraq',
   'IR' => 'Iran',
