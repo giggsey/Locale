@@ -21,7 +21,7 @@ class RegionTest extends TestCase
      * @see testGetRegion
      * @return array
      */
-    public function dataListOfRegions(): array
+    public static function dataListOfRegions(): array
     {
         return [
             ['af-ZA', 'ZA'],
