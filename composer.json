@@ -20,7 +20,7 @@
     "pear/versioncontrol_git": "^0.5",
     "pear/pear-core-minimal": "^1.9",
     "pear/pear_exception": "^1.0",
-    "phpunit/phpunit": "^8.5|^9.5",
+    "phpunit/phpunit": "^8.5|^9.5|^10|^11",
     "symfony/console": "^5.0|^6.0",
     "symfony/filesystem": "^5.0|^6.0",
     "symfony/process": "^5.0|^6.0",
