@@ -8,8 +8,8 @@
  * Do not modify or use this file directly!
  */
 
-return array (
-  'FR' => 'Fransa',
-  'IT' => 'Italia',
-  'MC' => 'Monego',
-);
+return  [
+    'FR' => 'Fransa',
+    'IT' => 'Italia',
+    'MC' => 'Monego',
+];

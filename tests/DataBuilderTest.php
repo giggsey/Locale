@@ -95,7 +95,6 @@ class DataBuilderTest extends TestCase
     /**
      * Create a temp directory
      * @link http://stackoverflow.com/a/1707859
-     * @return string
      */
     private static function createTempDirectory(): string
     {
@@ -110,6 +109,6 @@ class DataBuilderTest extends TestCase
             return $tempFile . DIRECTORY_SEPARATOR;
         }
 
-        throw new \RuntimeException("Unable to create temp directory");
+        throw new \RuntimeException('Unable to create temp directory');
     }
 }

@@ -8,6 +8,6 @@
  * Do not modify or use this file directly!
  */
 
-return array (
-  'US' => 'United States',
-);
+return  [
+    'US' => 'United States',
+];

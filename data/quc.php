@@ -8,6 +8,6 @@
  * Do not modify or use this file directly!
  */
 
-return array (
-  'MK' => 'Macedonia del Norte',
-);
+return  [
+    'MK' => 'Macedonia del Norte',
+];

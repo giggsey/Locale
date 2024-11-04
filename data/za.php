@@ -8,6 +8,6 @@
  * Do not modify or use this file directly!
  */
 
-return array (
-  'CN' => 'Cunghgoz',
-);
+return  [
+    'CN' => 'Cunghgoz',
+];

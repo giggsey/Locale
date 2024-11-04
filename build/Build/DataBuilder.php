@@ -10,17 +10,17 @@ use Symfony\Component\Console\Output\OutputInterface;
 class DataBuilder
 {
     protected const GENERATION_HEADER = <<<EOT
-/**
- * Locale @generated from CLDR version {{ version }}
- * See README.md for more information.
- *
- * @internal
- *
- * Do not modify or use this file directly!
- */
+        /**
+         * Locale @generated from CLDR version {{ version }}
+         * See README.md for more information.
+         *
+         * @internal
+         *
+         * Do not modify or use this file directly!
+         */
 
 
-EOT;
+        EOT;
 
     /**
      * Ignore these locales
@@ -55,7 +55,6 @@ EOT;
      * @param string $version Version of the CLDR data
      * @param string $inputDir Input directory to load CLDR data from
      * @param string $outputDir Output directory to write data
-     * @param OutputInterface $output
      */
     public function generate(string $version, string $inputDir, string $outputDir, OutputInterface $output): void
     {
@@ -121,19 +120,17 @@ EOT;
     /**
      * Check and create directories
      *
-     * @param string $inputDir
-     * @param string $outputDir
      * @codeCoverageIgnore
      */
     private function checkDirectories(string $inputDir, string $outputDir): void
     {
         if (!is_dir($inputDir)) {
-            throw new InvalidArgumentException(sprintf("Unable to find input directory: %s", $inputDir));
+            throw new InvalidArgumentException(sprintf('Unable to find input directory: %s', $inputDir));
         }
 
         // Try to create output directory
         if (!is_dir($outputDir) && !mkdir($outputDir) && !is_dir($outputDir)) {
-            throw new RuntimeException(sprintf("Unable to create output directory: %s", $outputDir));
+            throw new RuntimeException(sprintf('Unable to create output directory: %s', $outputDir));
         }
     }
 
@@ -163,10 +160,6 @@ EOT;
 
     /**
      *
-     *
-     * @param string $inputDir
-     * @param array $localeList
-     * @return array
      */
     protected function loadTerritories(string $inputDir, array $localeList): array
     {
@@ -214,10 +207,7 @@ EOT;
     }
 
     /**
-     * @param string $outputDir
      * @param string $version CLDR Version
-     * @param string $locale
-     * @param array $data
      */
     private function writeTerritoryFile(string $outputDir, string $version, string $locale, array $data): void
     {

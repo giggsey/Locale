@@ -8,8 +8,8 @@
  * Do not modify or use this file directly!
  */
 
-return array (
-  'EA' => 'سبتة ومليلية',
-  'MS' => 'مونتيسيرات',
-  'UY' => 'أوروغواي',
-);
+return  [
+    'EA' => 'سبتة ومليلية',
+    'MS' => 'مونتيسيرات',
+    'UY' => 'أوروغواي',
+];

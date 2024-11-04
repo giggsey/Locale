@@ -8,6 +8,6 @@
  * Do not modify or use this file directly!
  */
 
-return array (
-  'SJ' => 'Svalbard und Jan Mayen',
-);
+return  [
+    'SJ' => 'Svalbard und Jan Mayen',
+];

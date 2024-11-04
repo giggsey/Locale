@@ -8,8 +8,8 @@
  * Do not modify or use this file directly!
  */
 
-return array (
-  'MK' => 'Masedoniya y’Amajyaruguru',
-  'RW' => 'U Rwanda',
-  'TO' => 'Tonga',
-);
+return  [
+    'MK' => 'Masedoniya y’Amajyaruguru',
+    'RW' => 'U Rwanda',
+    'TO' => 'Tonga',
+];

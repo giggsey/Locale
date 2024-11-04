@@ -8,6 +8,6 @@
  * Do not modify or use this file directly!
  */
 
-return array (
-  'SB' => 'Solomon Aelan',
-);
+return  [
+    'SB' => 'Solomon Aelan',
+];

@@ -8,7 +8,7 @@
  * Do not modify or use this file directly!
  */
 
-return array (
-  'GB' => 'Rywvaneth Unys',
-  'IM' => 'Ellan Vannin',
-);
+return  [
+    'GB' => 'Rywvaneth Unys',
+    'IM' => 'Ellan Vannin',
+];

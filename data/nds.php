@@ -8,7 +8,7 @@
  * Do not modify or use this file directly!
  */
 
-return array (
-  'DE' => 'Düütschland',
-  'NL' => 'Nedderlannen',
-);
+return  [
+    'DE' => 'Düütschland',
+    'NL' => 'Nedderlannen',
+];

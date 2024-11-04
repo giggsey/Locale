@@ -8,6 +8,6 @@
  * Do not modify or use this file directly!
  */
 
-return array (
-  'KP' => '조선민주주의인민공화국',
-);
+return  [
+    'KP' => '조선민주주의인민공화국',
+];

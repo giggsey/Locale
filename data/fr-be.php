@@ -8,6 +8,6 @@
  * Do not modify or use this file directly!
  */
 
-return array (
-  'GS' => 'Îles Géorgie du Sud et Sandwich du Sud',
-);
+return  [
+    'GS' => 'Îles Géorgie du Sud et Sandwich du Sud',
+];

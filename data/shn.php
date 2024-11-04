@@ -8,7 +8,7 @@
  * Do not modify or use this file directly!
  */
 
-return array (
-  'MM' => 'မျၢၼ်ႇမႃႇ (မိူင်းမၢၼ်ႈ)',
-  'TH' => 'မိူင်းထႆး',
-);
+return  [
+    'MM' => 'မျၢၼ်ႇမႃႇ (မိူင်းမၢၼ်ႈ)',
+    'TH' => 'မိူင်းထႆး',
+];

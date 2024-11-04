@@ -8,6 +8,6 @@
  * Do not modify or use this file directly!
  */
 
-return array (
-  'US' => '𞄒𞄫𞄱𞄔𞄩𞄴',
-);
+return  [
+    'US' => '𞄒𞄫𞄱𞄔𞄩𞄴',
+];

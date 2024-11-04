@@ -8,11 +8,11 @@
  * Do not modify or use this file directly!
  */
 
-return array (
-  'BN' => 'Brunei',
-  'BW' => 'Botswana',
-  'CV' => 'Kapverden',
-  'SB' => 'Salomon-Inseln',
-  'TL' => 'Osttimor',
-  'ZW' => 'Zimbabwe',
-);
+return  [
+    'BN' => 'Brunei',
+    'BW' => 'Botswana',
+    'CV' => 'Kapverden',
+    'SB' => 'Salomon-Inseln',
+    'TL' => 'Osttimor',
+    'ZW' => 'Zimbabwe',
+];

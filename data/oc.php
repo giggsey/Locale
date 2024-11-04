@@ -8,8 +8,8 @@
  * Do not modify or use this file directly!
  */
 
-return array (
-  'ES' => 'Espanha',
-  'FR' => 'França',
-  'HK' => 'Hong Kong',
-);
+return  [
+    'ES' => 'Espanha',
+    'FR' => 'França',
+    'HK' => 'Hong Kong',
+];

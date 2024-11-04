@@ -8,6 +8,6 @@
  * Do not modify or use this file directly!
  */
 
-return array (
-  'MZ' => 'oMosambikhi',
-);
+return  [
+    'MZ' => 'oMosambikhi',
+];

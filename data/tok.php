@@ -8,7 +8,7 @@
  * Do not modify or use this file directly!
  */
 
-return array (
-  'SZ' => 'ma Sawasi',
-  'UZ' => 'ma Opekisan',
-);
+return  [
+    'SZ' => 'ma Sawasi',
+    'UZ' => 'ma Opekisan',
+];

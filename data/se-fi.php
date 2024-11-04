@@ -8,9 +8,9 @@
  * Do not modify or use this file directly!
  */
 
-return array (
-  'BA' => 'Bosnia ja Hercegovina',
-  'KH' => 'Kamboža',
-  'SD' => 'Sudan',
-  'TD' => 'Chad',
-);
+return  [
+    'BA' => 'Bosnia ja Hercegovina',
+    'KH' => 'Kamboža',
+    'SD' => 'Sudan',
+    'TD' => 'Chad',
+];
