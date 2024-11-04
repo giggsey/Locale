@@ -1,14 +1,11 @@
 <?php
 /**
- * Locale @generated from CLDR version 45.0.0
- * See README.md for more information.
- *
- * @internal
- *
+ * Locale data file
+ * This file has been @generated from Locale data
  * Do not modify or use this file directly!
+ * @internal
  */
-
-return  [
+return [
     'AD' => '𐐈𐑌𐐼𐐱𐑉𐐲',
     'AE' => '𐐏𐐭𐑌𐐴𐐼𐐮𐐼 𐐇𐑉𐐲𐐺 𐐇𐑋𐐲𐑉𐐩𐐻𐑅',
     'AF' => '𐐈𐑁𐑀𐐰𐑌𐐲𐑅𐐻𐐰𐑌',

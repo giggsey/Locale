@@ -1,14 +1,11 @@
 <?php
 /**
- * Locale @generated from CLDR version 45.0.0
- * See README.md for more information.
- *
- * @internal
- *
+ * Locale data file
+ * This file has been @generated from Locale data
  * Do not modify or use this file directly!
+ * @internal
  */
-
-return  [
+return [
     'AC' => 'ಅಸೆನ್ಶನ್ ದ್ವೀಪ',
     'AD' => 'ಅಂಡೋರಾ',
     'AE' => 'ಯುನೈಟೆಡ್ ಅರಬ್ ಎಮಿರೇಟ್ಸ್',

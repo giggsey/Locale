@@ -25,6 +25,7 @@
     "symfony/filesystem": "^5.0|^6.0",
     "symfony/process": "^5.0|^6.0",
     "symfony/finder": "^5.0|^6.0",
+    "symfony/var-exporter": "^5.2|^6.0",
     "friendsofphp/php-cs-fixer": "^3.64"
   },
   "autoload": {

@@ -6,19 +6,17 @@ use InvalidArgumentException;
 use RuntimeException;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\VarExporter\VarExporter;
 
 class DataBuilder
 {
     protected const GENERATION_HEADER = <<<EOT
         /**
-         * Locale @generated from CLDR version {{ version }}
-         * See README.md for more information.
-         *
-         * @internal
-         *
+         * Locale data file
+         * This file has been @generated from Locale data
          * Do not modify or use this file directly!
+         * @internal
          */
-
 
         EOT;
 
@@ -101,7 +99,7 @@ class DataBuilder
                 continue;
             }
 
-            $this->writeTerritoryFile($outputDir, $version, $locale, $countryData);
+            $this->writeTerritoryFile($outputDir, $locale, $countryData);
 
             $writtenCountries[strtolower($locale)] = '';
 
@@ -110,7 +108,7 @@ class DataBuilder
 
         ksort($writtenCountries);
 
-        $this->writeMappingFile($outputDir, $version, $writtenCountries);
+        $this->writeMappingFile($outputDir, $writtenCountries);
 
         $this->writeVersionFile($outputDir, $version);
 
@@ -206,26 +204,23 @@ class DataBuilder
         return $countries;
     }
 
-    /**
-     * @param string $version CLDR Version
-     */
-    private function writeTerritoryFile(string $outputDir, string $version, string $locale, array $data): void
+    private function writeTerritoryFile(string $outputDir, string $locale, array $data): void
     {
         $phpSource = '<?php'
             . PHP_EOL
-            . $this->generateFileHeader($version)
-            . 'return ' . var_export($data, true) . ';'
+            . static::GENERATION_HEADER
+            . 'return ' . VarExporter::export($data) . ';'
             . PHP_EOL;
 
         file_put_contents($outputDir . strtolower($locale) . '.php', $phpSource);
     }
 
-    private function writeMappingFile(string $outputDir, string $version, array $countryList): void
+    private function writeMappingFile(string $outputDir, array $countryList): void
     {
         $phpSource = '<?php'
             . PHP_EOL
-            . $this->generateFileHeader($version)
-            . 'return ' . var_export($countryList, true) . ';'
+            . static::GENERATION_HEADER
+            . 'return ' . VarExporter::export($countryList) . ';'
             . PHP_EOL;
 
         file_put_contents($outputDir . '_list.php', $phpSource);
@@ -235,15 +230,10 @@ class DataBuilder
     {
         $phpSource = '<?php'
             . PHP_EOL
-            . $this->generateFileHeader($version)
-            . 'return ' . var_export($version, true) . ';'
+            . static::GENERATION_HEADER
+            . 'return ' . VarExporter::export($version) . ';'
             . PHP_EOL;
 
         file_put_contents($outputDir . '_version.php', $phpSource);
-    }
-
-    private function generateFileHeader($version): string
-    {
-        return str_replace('{{ version }}', $version, static::GENERATION_HEADER);
     }
 }
