@@ -1,5 +1,0 @@
-preset: psr12
-
-finder:
-  exclude:
-    - "data"

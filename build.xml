@@ -22,7 +22,7 @@
     </target>
 
     <target name="compile" description="Build data"
-            depends="cleanup-data,build-data">
+            depends="cleanup-data,build-data,cs-fixer">
     </target>
 
     <target name="cleanup-data" description="Cleanup built data">
@@ -65,4 +65,9 @@
         </exec>
     </target>
 
+    <target name="cs-fixer">
+        <exec executable="vendor/bin/php-cs-fixer" passthru="true">
+            <arg value="fix"/>
+        </exec>
+    </target>
 </project>
