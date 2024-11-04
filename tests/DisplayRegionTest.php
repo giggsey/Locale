@@ -8,9 +8,6 @@ use PHPUnit\Framework\TestCase;
 class DisplayRegionTest extends TestCase
 {
     /**
-     * @param string $locale
-     * @param string $inLocale
-     * @param string $expectedRegion
      * @dataProvider dataDisplayRegions
      */
     public function testGetDisplayRegion(string $locale, string $inLocale, string $expectedRegion): void
@@ -24,7 +21,6 @@ class DisplayRegionTest extends TestCase
 
     /**
      * @see testGetDisplayRegion
-     * @return array
      */
     public function dataDisplayRegions(): array
     {

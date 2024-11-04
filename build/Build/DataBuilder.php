@@ -6,21 +6,19 @@ use InvalidArgumentException;
 use RuntimeException;
 use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\VarExporter\VarExporter;
 
 class DataBuilder
 {
     protected const GENERATION_HEADER = <<<EOT
-/**
- * Locale @generated from CLDR version {{ version }}
- * See README.md for more information.
- *
- * @internal
- *
- * Do not modify or use this file directly!
- */
+        /**
+         * Locale data file
+         * This file has been @generated from Locale data
+         * Do not modify or use this file directly!
+         * @internal
+         */
 
-
-EOT;
+        EOT;
 
     /**
      * Ignore these locales
@@ -55,7 +53,6 @@ EOT;
      * @param string $version Version of the CLDR data
      * @param string $inputDir Input directory to load CLDR data from
      * @param string $outputDir Output directory to write data
-     * @param OutputInterface $output
      */
     public function generate(string $version, string $inputDir, string $outputDir, OutputInterface $output): void
     {
@@ -102,7 +99,7 @@ EOT;
                 continue;
             }
 
-            $this->writeTerritoryFile($outputDir, $version, $locale, $countryData);
+            $this->writeTerritoryFile($outputDir, $locale, $countryData);
 
             $writtenCountries[strtolower($locale)] = '';
 
@@ -111,7 +108,7 @@ EOT;
 
         ksort($writtenCountries);
 
-        $this->writeMappingFile($outputDir, $version, $writtenCountries);
+        $this->writeMappingFile($outputDir, $writtenCountries);
 
         $this->writeVersionFile($outputDir, $version);
 
@@ -121,19 +118,17 @@ EOT;
     /**
      * Check and create directories
      *
-     * @param string $inputDir
-     * @param string $outputDir
      * @codeCoverageIgnore
      */
     private function checkDirectories(string $inputDir, string $outputDir): void
     {
         if (!is_dir($inputDir)) {
-            throw new InvalidArgumentException(sprintf("Unable to find input directory: %s", $inputDir));
+            throw new InvalidArgumentException(sprintf('Unable to find input directory: %s', $inputDir));
         }
 
         // Try to create output directory
         if (!is_dir($outputDir) && !mkdir($outputDir) && !is_dir($outputDir)) {
-            throw new RuntimeException(sprintf("Unable to create output directory: %s", $outputDir));
+            throw new RuntimeException(sprintf('Unable to create output directory: %s', $outputDir));
         }
     }
 
@@ -163,10 +158,6 @@ EOT;
 
     /**
      *
-     *
-     * @param string $inputDir
-     * @param array $localeList
-     * @return array
      */
     protected function loadTerritories(string $inputDir, array $localeList): array
     {
@@ -213,29 +204,23 @@ EOT;
         return $countries;
     }
 
-    /**
-     * @param string $outputDir
-     * @param string $version CLDR Version
-     * @param string $locale
-     * @param array $data
-     */
-    private function writeTerritoryFile(string $outputDir, string $version, string $locale, array $data): void
+    private function writeTerritoryFile(string $outputDir, string $locale, array $data): void
     {
         $phpSource = '<?php'
             . PHP_EOL
-            . $this->generateFileHeader($version)
-            . 'return ' . var_export($data, true) . ';'
+            . static::GENERATION_HEADER
+            . 'return ' . VarExporter::export($data) . ';'
             . PHP_EOL;
 
         file_put_contents($outputDir . strtolower($locale) . '.php', $phpSource);
     }
 
-    private function writeMappingFile(string $outputDir, string $version, array $countryList): void
+    private function writeMappingFile(string $outputDir, array $countryList): void
     {
         $phpSource = '<?php'
             . PHP_EOL
-            . $this->generateFileHeader($version)
-            . 'return ' . var_export($countryList, true) . ';'
+            . static::GENERATION_HEADER
+            . 'return ' . VarExporter::export($countryList) . ';'
             . PHP_EOL;
 
         file_put_contents($outputDir . '_list.php', $phpSource);
@@ -245,15 +230,10 @@ EOT;
     {
         $phpSource = '<?php'
             . PHP_EOL
-            . $this->generateFileHeader($version)
-            . 'return ' . var_export($version, true) . ';'
+            . static::GENERATION_HEADER
+            . 'return ' . VarExporter::export($version) . ';'
             . PHP_EOL;
 
         file_put_contents($outputDir . '_version.php', $phpSource);
-    }
-
-    private function generateFileHeader($version): string
-    {
-        return str_replace('{{ version }}', $version, static::GENERATION_HEADER);
     }
 }

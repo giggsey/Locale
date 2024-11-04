@@ -2,7 +2,6 @@
 
 namespace Giggsey\Locale\Tests;
 
-use PHPUnit\Exception;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
@@ -79,7 +78,7 @@ class PhingCompareTest extends TestCase
             $backupFiles[] = $file->getFilename();
         }
 
-        $this->assertEquals($outputFiles, $backupFiles, "File names should match exactly");
+        $this->assertEquals($outputFiles, $backupFiles, 'File names should match exactly');
 
         foreach ($backupFinder as $file) {
             $this->assertFileEquals($file->getRealPath(), static::$outputDir . $file->getFilename());

@@ -19,7 +19,6 @@ class PrimaryLanguageTest extends TestCase
 
     /**
      * @see testGetPrimaryLanguage
-     * @return array
      */
     public function dataListOfPrimaryLanguages(): array
     {
@@ -254,7 +253,6 @@ class PrimaryLanguageTest extends TestCase
 
     /**
      * @see testUnderscoreOrDash
-     * @return array
      */
     public function dataUnderscoreOrDash(): array
     {

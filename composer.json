@@ -11,7 +11,7 @@
     }
   ],
   "require": {
-    "php": ">=7.2"
+    "php": "^7.4|^8.0"
   },
   "require-dev": {
     "ext-json": "*",
@@ -24,7 +24,9 @@
     "symfony/console": "^5.0|^6.0",
     "symfony/filesystem": "^5.0|^6.0",
     "symfony/process": "^5.0|^6.0",
-    "symfony/finder": "^5.0|^6.0"
+    "symfony/finder": "^5.0|^6.0",
+    "symfony/var-exporter": "^5.2|^6.0",
+    "friendsofphp/php-cs-fixer": "^3.64"
   },
   "autoload": {
     "psr-4": {
@@ -43,14 +45,14 @@
       "tests/",
       ".gitattributes",
       ".gitignore",
-      ".styleci.yml",
-      ".travis.yml",
+      ".php-cs-fixer.dist.php",
       "build.xml",
       "phpunit.xml.dist"
     ]
   },
   "scripts": {
-    "test": "phpunit",
-    "metadata": "phing compile"
+    "cs": "vendor/bin/php-cs-fixer fix",
+    "test": "vendor/bin/phpunit",
+    "metadata": "vendor/bin/phing compile"
   }
 }

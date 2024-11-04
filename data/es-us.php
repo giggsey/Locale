@@ -1,22 +1,19 @@
 <?php
 /**
- * Locale @generated from CLDR version 45.0.0
- * See README.md for more information.
- *
- * @internal
- *
+ * Locale data file
+ * This file has been @generated from Locale data
  * Do not modify or use this file directly!
+ * @internal
  */
-
-return array (
-  'AX' => 'Islas Åland',
-  'CG' => 'República del Congo',
-  'CI' => 'Costa de Marfil',
-  'EH' => 'Sahara Occidental',
-  'GG' => 'Guernsey',
-  'GS' => 'Islas Georgia del Sur y Sándwich del Sur',
-  'IC' => 'Islas Canarias',
-  'RO' => 'Rumania',
-  'SA' => 'Arabia Saudita',
-  'TL' => 'Timor Oriental',
-);
+return [
+    'AX' => 'Islas Åland',
+    'CG' => 'República del Congo',
+    'CI' => 'Costa de Marfil',
+    'EH' => 'Sahara Occidental',
+    'GG' => 'Guernsey',
+    'GS' => 'Islas Georgia del Sur y Sándwich del Sur',
+    'IC' => 'Islas Canarias',
+    'RO' => 'Rumania',
+    'SA' => 'Arabia Saudita',
+    'TL' => 'Timor Oriental',
+];

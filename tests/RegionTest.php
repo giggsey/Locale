@@ -19,7 +19,6 @@ class RegionTest extends TestCase
 
     /**
      * @see testGetRegion
-     * @return array
      */
     public function dataListOfRegions(): array
     {
