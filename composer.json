@@ -45,13 +45,13 @@
       ".gitattributes",
       ".gitignore",
       ".php-cs-fixer.dist.php",
-      ".travis.yml",
       "build.xml",
       "phpunit.xml.dist"
     ]
   },
   "scripts": {
-    "test": "phpunit",
-    "metadata": "phing compile"
+    "cs": "vendor/bin/php-cs-fixer fix",
+    "test": "vendor/bin/phpunit",
+    "metadata": "vendor/bin/phing compile"
   }
 }
