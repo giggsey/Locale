@@ -1,4 +1,4 @@
-# Locale [![Build Status](https://img.shields.io/travis/giggsey/Locale.svg?style=flat-square)](https://travis-ci.org/giggsey/Locale) [![Coverage Status](https://img.shields.io/coveralls/giggsey/Locale.svg?style=flat-square)](https://coveralls.io/r/giggsey/Locale) [![StyleCI](https://styleci.io/repos/24566760/shield)](https://styleci.io/repos/24566760)
+# Locale [![Build Status](https://github.com/giggsey/locale/workflows/Continuous%20Integration/badge.svg)](https://github.com/giggsey/locale/actions?query=workflow%3A%22Continuous+Integration%22) [![Coverage Status](https://img.shields.io/coveralls/giggsey/Locale.svg?style=flat-square)](https://coveralls.io/r/giggsey/Locale)
 
 [![Total Downloads](https://poser.pugx.org/giggsey/locale/downloads?format=flat-square)](https://packagist.org/packages/giggsey/locale) [![Latest Stable Version](https://poser.pugx.org/giggsey/locale/v/stable?format=flat-square)](https://packagist.org/packages/giggsey/locale) [![License](https://poser.pugx.org/giggsey/locale/license?format=flat-square)](https://packagist.org/packages/giggsey/locale)
 
