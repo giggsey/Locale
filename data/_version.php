@@ -5,4 +5,4 @@
  * Do not modify or use this file directly!
  * @internal
  */
-return '45.0.0';
+return '46.0.0';

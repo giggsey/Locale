@@ -73,7 +73,7 @@ return [
     'EA' => 'Ceuta agus Melilla',
     'EC' => 'Eacuador',
     'EE' => 'An Eastoin',
-    'EG' => 'An Èiphit',
+    'EG' => 'An Èipheit',
     'EH' => 'Sathara an Iar',
     'ER' => 'Eartra',
     'ES' => 'An Spàinnt',

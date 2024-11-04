@@ -6,6 +6,6 @@
  * @internal
  */
 return [
-    'CA' => 'ᑳᓇᑕ',
-    'US' => 'ᑭᐦᒋ ᒨᑯᒫᓂᕽ',
+    'LS' => 'Lesotho',
+    'ZA' => 'Afrika Borwa',
 ];
