@@ -6,5 +6,6 @@
  * @internal
  */
 return [
+    'BW' => 'Botswana',
     'ZA' => 'Aforika Borwa',
 ];

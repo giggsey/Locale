@@ -166,7 +166,7 @@ return [
     'MV' => 'Maldive',
     'MW' => 'Malawi',
     'MX' => 'Mèsego',
-    'MY' => 'Malezia',
+    'MY' => 'Malèizia',
     'MZ' => 'Mozanbigo',
     'NA' => 'Namibia',
     'NC' => 'Nova Caledonia',

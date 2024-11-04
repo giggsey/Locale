@@ -38,7 +38,7 @@ return [
     'BO' => 'Bolivia',
     'BQ' => 'Karibia Walanda',
     'BR' => 'Brasil',
-    'BS' => 'Bahamas',
+    'BS' => 'Bahama',
     'BT' => 'Bhutan',
     'BW' => 'Botswana',
     'BY' => 'Bélarus',

@@ -220,7 +220,7 @@ return [
     'SV' => 'El Salvador',
     'SX' => 'Sint Maarten',
     'SY' => 'Sýrland',
-    'SZ' => 'Svasíland',
+    'SZ' => 'Esvatíní',
     'TA' => 'Tristan da Cunha',
     'TC' => 'Turks- og Caicoseyjar',
     'TD' => 'Tsjad',
