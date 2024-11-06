@@ -20,7 +20,7 @@ class PrimaryLanguageTest extends TestCase
     /**
      * @see testGetPrimaryLanguage
      */
-    public function dataListOfPrimaryLanguages(): array
+    public static function dataListOfPrimaryLanguages(): array
     {
         return [
             ['af-ZA', 'af'],
@@ -254,7 +254,7 @@ class PrimaryLanguageTest extends TestCase
     /**
      * @see testUnderscoreOrDash
      */
-    public function dataUnderscoreOrDash(): array
+    public static function dataUnderscoreOrDash(): array
     {
         return [
             ['en-GB', 'en'],
