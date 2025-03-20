@@ -1,4 +1,7 @@
 <?php
+
+declare(strict_types=1);
+
 /**
  * @author giggsey
  * @package Locale
@@ -18,7 +21,7 @@ class VersionTest extends TestCase
         $currentVersionContents = file(__DIR__ . '/../CLDR-VERSION.txt');
 
         foreach ($currentVersionContents as $line) {
-            if (trim($line) !== '' && strpos($line, '#') !== 0) {
+            if (trim($line) !== '' && !str_starts_with($line, '#')) {
                 $version = trim($line);
                 break;
             }

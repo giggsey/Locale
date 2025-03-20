@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Giggsey\Locale\Tests;
 
 use Giggsey\Locale\Locale;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class PrimaryLanguageTest extends TestCase
@@ -10,8 +13,8 @@ class PrimaryLanguageTest extends TestCase
     /**
      * @param string $locale Input locale
      * @param string $language Expected output language
-     * @dataProvider dataListOfPrimaryLanguages
      */
+    #[DataProvider('dataListOfPrimaryLanguages')]
     public function testGetPrimaryLanguage(string $locale, string $language): void
     {
         $this->assertSame($language, Locale::getPrimaryLanguage($locale));
@@ -20,7 +23,7 @@ class PrimaryLanguageTest extends TestCase
     /**
      * @see testGetPrimaryLanguage
      */
-    public function dataListOfPrimaryLanguages(): array
+    public static function dataListOfPrimaryLanguages(): array
     {
         return [
             ['af-ZA', 'af'],
@@ -244,8 +247,8 @@ class PrimaryLanguageTest extends TestCase
     /**
      * @param string $locale Input locale
      * @param string $language Expected output language
-     * @dataProvider dataUnderscoreOrDash
      */
+    #[DataProvider('dataUnderscoreOrDash')]
     public function testUnderscoreOrDash(string $locale, string $language): void
     {
         $this->assertSame($language, Locale::getPrimaryLanguage($locale));
@@ -254,7 +257,7 @@ class PrimaryLanguageTest extends TestCase
     /**
      * @see testUnderscoreOrDash
      */
-    public function dataUnderscoreOrDash(): array
+    public static function dataUnderscoreOrDash(): array
     {
         return [
             ['en-GB', 'en'],

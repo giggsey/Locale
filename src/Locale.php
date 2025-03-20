@@ -1,6 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Giggsey\Locale;
+
+use RuntimeException;
 
 class Locale
 {
@@ -122,7 +126,7 @@ class Locale
      * Load a list of all countries supported by a particular Locale
      *
      * @return string[] Associative array of Country Code => Country Name
-     * @throws \RuntimeException On an invalid region
+     * @throws RuntimeException On an invalid region
      */
     public static function getAllCountriesForLocale(string $locale): array
     {
@@ -130,7 +134,7 @@ class Locale
         $regionList = require $dataDir . '_list.php';
 
         if (!isset($regionList[$locale])) {
-            throw new \RuntimeException('Locale is not supported');
+            throw new RuntimeException('Locale is not supported');
         }
 
         /*

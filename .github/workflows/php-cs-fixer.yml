@@ -2,7 +2,7 @@ name: PHP CS Fixer
 on:
   push:
     branches:
-      - 'main'
+      - 'master'
   pull_request:
     paths:
       - '**.php'

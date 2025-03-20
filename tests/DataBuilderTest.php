@@ -1,11 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Giggsey\Locale\Tests;
 
 use Giggsey\Locale\Build\DataBuilder;
+use PHPUnit\Framework\Attributes\Depends;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Output\NullOutput;
 use Symfony\Component\Filesystem\Filesystem;
+use RuntimeException;
 
 class DataBuilderTest extends TestCase
 {
@@ -52,8 +56,8 @@ class DataBuilderTest extends TestCase
 
     /**
      * @param string $outputDir Output directory
-     * @depends testGeneratingData
      */
+    #[Depends('testGeneratingData')]
     public function testEnglishData(string $outputDir): void
     {
         $englishFile = $outputDir . 'en.php';
@@ -76,8 +80,8 @@ class DataBuilderTest extends TestCase
 
     /**
      * @param string $outputDir Output directory
-     * @depends testGeneratingData
      */
+    #[Depends('testGeneratingData')]
     public function testGBData(string $outputDir): void
     {
         $englishFile = $outputDir . 'en-gb.php';
@@ -109,6 +113,6 @@ class DataBuilderTest extends TestCase
             return $tempFile . DIRECTORY_SEPARATOR;
         }
 
-        throw new \RuntimeException('Unable to create temp directory');
+        throw new RuntimeException('Unable to create temp directory');
     }
 }
