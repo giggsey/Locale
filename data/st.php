@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Locale data file
  * This file has been @generated from Locale data

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @author giggsey
  * @package Locale
