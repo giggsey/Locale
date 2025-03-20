@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Giggsey\Locale\Tests;
 
 use Giggsey\Locale\Locale;
@@ -7,9 +9,7 @@ use PHPUnit\Framework\TestCase;
 
 class DisplayRegionTest extends TestCase
 {
-    /**
-     * @dataProvider dataDisplayRegions
-     */
+    #[\PHPUnit\Framework\Attributes\DataProvider('dataDisplayRegions')]
     public function testGetDisplayRegion(string $locale, string $inLocale, string $expectedRegion): void
     {
         $this->assertSame(
@@ -22,17 +22,17 @@ class DisplayRegionTest extends TestCase
     /**
      * @see testGetDisplayRegion
      */
-    public function dataDisplayRegions(): array
+    public static function dataDisplayRegions(): array
     {
         return array_merge(
-            $this->dataForUnitedKingdom(),
-            $this->dataForGermany(),
-            $this->dataForMissingEntries(),
-            $this->dataForInvalidRegions()
+            self::dataForUnitedKingdom(),
+            self::dataForGermany(),
+            self::dataForMissingEntries(),
+            self::dataForInvalidRegions()
         );
     }
 
-    protected function dataForUnitedKingdom(): array
+    protected static function dataForUnitedKingdom(): array
     {
         return [
             ['en-GB', 'en-GB', 'United Kingdom'],
@@ -56,7 +56,7 @@ class DisplayRegionTest extends TestCase
         ];
     }
 
-    protected function dataForGermany(): array
+    protected static function dataForGermany(): array
     {
         return [
             ['-de', 'en-GB', 'Germany'],
@@ -70,7 +70,7 @@ class DisplayRegionTest extends TestCase
         ];
     }
 
-    protected function dataForMissingEntries(): array
+    protected static function dataForMissingEntries(): array
     {
         return [
             ['-rs', 'en', 'Serbia'],
@@ -78,7 +78,7 @@ class DisplayRegionTest extends TestCase
         ];
     }
 
-    protected function dataForInvalidRegions(): array
+    protected static function dataForInvalidRegions(): array
     {
         return [
             ['fake-too', 'en', ''],

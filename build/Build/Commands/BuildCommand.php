@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Giggsey\Locale\Build\Commands;
 
 use Giggsey\Locale\Build\DataBuilder;

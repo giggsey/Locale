@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Giggsey\Locale\Build;
 
 use InvalidArgumentException;
@@ -156,9 +158,6 @@ class DataBuilder
         return $localeList;
     }
 
-    /**
-     *
-     */
     protected function loadTerritories(string $inputDir, array $localeList): array
     {
         $countries = [];

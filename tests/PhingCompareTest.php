@@ -1,7 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Giggsey\Locale\Tests;
 
+use PHPUnit\Framework\Attributes\Depends;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Finder\Finder;
@@ -51,9 +54,7 @@ class PhingCompareTest extends TestCase
         $this->assertTrue($process->isSuccessful());
     }
 
-    /**
-     * @depends testRunningPhing
-     */
+    #[Depends('testRunningPhing')]
     public function testComparingDirectories(): void
     {
         /*

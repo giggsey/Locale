@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Giggsey\Locale\Tests;
 
 use Giggsey\Locale\Locale;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class RegionTest extends TestCase
@@ -10,8 +13,8 @@ class RegionTest extends TestCase
     /**
      * @param string $locale Input locale
      * @param string $expectedRegion Expected output region
-     * @dataProvider dataListOfRegions
      */
+    #[DataProvider('dataListOfRegions')]
     public function testGetRegion(string $locale, string $expectedRegion): void
     {
         $this->assertSame($expectedRegion, Locale::getRegion($locale));
@@ -20,7 +23,7 @@ class RegionTest extends TestCase
     /**
      * @see testGetRegion
      */
-    public function dataListOfRegions(): array
+    public static function dataListOfRegions(): array
     {
         return [
             ['af-ZA', 'ZA'],
