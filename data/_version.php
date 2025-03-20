@@ -6,4 +6,4 @@
  * Do not modify or use this file directly!
  * @internal
  */
-return '46.0.0';
+return '47.0.0';
