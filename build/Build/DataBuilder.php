@@ -169,7 +169,7 @@ class DataBuilder
                 continue;
             }
 
-            $data = json_decode((string)file_get_contents($path), true, flags: JSON_THROW_ON_ERROR);
+            $data = json_decode((string) file_get_contents($path), true, flags: JSON_THROW_ON_ERROR);
             $territoryList = $data['main'][$locale]['localeDisplayNames']['territories'];
 
             $countries[$locale] = [];
