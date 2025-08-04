@@ -5,14 +5,15 @@ declare(strict_types=1);
 namespace Giggsey\Locale\Tests;
 
 use Giggsey\Locale\Locale;
+use PHPUnit\Framework\Attributes\DataProvider;
 use PHPUnit\Framework\TestCase;
 
 class DisplayRegionTest extends TestCase
 {
-    #[\PHPUnit\Framework\Attributes\DataProvider('dataDisplayRegions')]
+    #[DataProvider('dataDisplayRegions')]
     public function testGetDisplayRegion(string $locale, string $inLocale, string $expectedRegion): void
     {
-        $this->assertSame(
+        self::assertSame(
             $expectedRegion,
             Locale::getDisplayRegion($locale, $inLocale),
             "getDisplayRegion with $locale and $inLocale"
@@ -21,6 +22,7 @@ class DisplayRegionTest extends TestCase
 
     /**
      * @see testGetDisplayRegion
+     * @return array<array{string, string,string}>
      */
     public static function dataDisplayRegions(): array
     {
@@ -31,7 +33,9 @@ class DisplayRegionTest extends TestCase
             self::dataForInvalidRegions()
         );
     }
-
+    /**
+     * @return array<array{string, string,string}>
+     */
     protected static function dataForUnitedKingdom(): array
     {
         return [
@@ -55,7 +59,9 @@ class DisplayRegionTest extends TestCase
             ['EN-gb', 'EN-gb', 'United Kingdom'],
         ];
     }
-
+    /**
+     * @return array<array{string, string,string}>
+     */
     protected static function dataForGermany(): array
     {
         return [
@@ -69,7 +75,9 @@ class DisplayRegionTest extends TestCase
             ['de-DE', 'fr', 'Allemagne'],
         ];
     }
-
+    /**
+     * @return array<array{string, string,string}>
+     */
     protected static function dataForMissingEntries(): array
     {
         return [
@@ -78,6 +86,9 @@ class DisplayRegionTest extends TestCase
         ];
     }
 
+    /**
+     * @return array<array{string, string,string}>
+     */
     protected static function dataForInvalidRegions(): array
     {
         return [

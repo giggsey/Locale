@@ -20,6 +20,8 @@ class VersionTest extends TestCase
 
         $currentVersionContents = file(__DIR__ . '/../CLDR-VERSION.txt');
 
+        self::assertNotFalse($currentVersionContents);
+
         foreach ($currentVersionContents as $line) {
             if (trim($line) !== '' && !str_starts_with($line, '#')) {
                 $version = trim($line);
@@ -27,7 +29,7 @@ class VersionTest extends TestCase
             }
         }
 
-        $this->assertNotNull($version);
-        $this->assertSame($version, Locale::getVersion());
+        self::assertNotNull($version);
+        self::assertSame($version, Locale::getVersion());
     }
 }

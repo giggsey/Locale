@@ -17,10 +17,11 @@ class PrimaryLanguageTest extends TestCase
     #[DataProvider('dataListOfPrimaryLanguages')]
     public function testGetPrimaryLanguage(string $locale, string $language): void
     {
-        $this->assertSame($language, Locale::getPrimaryLanguage($locale));
+        self::assertSame($language, Locale::getPrimaryLanguage($locale));
     }
 
     /**
+     * @return array<array{string, string}>
      * @see testGetPrimaryLanguage
      */
     public static function dataListOfPrimaryLanguages(): array
@@ -251,11 +252,12 @@ class PrimaryLanguageTest extends TestCase
     #[DataProvider('dataUnderscoreOrDash')]
     public function testUnderscoreOrDash(string $locale, string $language): void
     {
-        $this->assertSame($language, Locale::getPrimaryLanguage($locale));
+        self::assertSame($language, Locale::getPrimaryLanguage($locale));
     }
 
     /**
      * @see testUnderscoreOrDash
+     * @return array<array{string, string}>
      */
     public static function dataUnderscoreOrDash(): array
     {

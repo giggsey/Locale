@@ -17,11 +17,12 @@ class RegionTest extends TestCase
     #[DataProvider('dataListOfRegions')]
     public function testGetRegion(string $locale, string $expectedRegion): void
     {
-        $this->assertSame($expectedRegion, Locale::getRegion($locale));
+        self::assertSame($expectedRegion, Locale::getRegion($locale));
     }
 
     /**
      * @see testGetRegion
+     * @return array<array{string, string}>
      */
     public static function dataListOfRegions(): array
     {

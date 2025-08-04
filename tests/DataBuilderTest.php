@@ -13,7 +13,7 @@ use RuntimeException;
 
 class DataBuilderTest extends TestCase
 {
-    protected static $outputDir;
+    protected static string $outputDir;
 
     public static function setUpBeforeClass(): void
     {
@@ -22,10 +22,8 @@ class DataBuilderTest extends TestCase
 
     public static function tearDownAfterClass(): void
     {
-        if (static::$outputDir) {
-            $fileSystem = new Filesystem();
-            $fileSystem->remove(static::$outputDir);
-        }
+        $fileSystem = new Filesystem();
+        $fileSystem->remove(static::$outputDir);
     }
 
     public function testGeneratingData(): string
@@ -37,19 +35,19 @@ class DataBuilderTest extends TestCase
         $dataBuilder->generate('1', __DIR__ . '/testData/', $outputDir, new NullOutput());
 
         $listFile = $outputDir . '_list.php';
-        $this->assertFileExists($listFile);
+        self::assertFileExists($listFile);
         $list = require $listFile;
 
-        $this->assertArrayHasKey('en', $list);
-        $this->assertArrayHasKey('en-gb', $list);
-        $this->assertArrayNotHasKey('en-150', $list, 'en-150 is part of the ignored locale list, so should be ignored');
-        $this->assertArrayNotHasKey('empty', $list, 'empty has no territories defined, so should be ignored');
+        self::assertArrayHasKey('en', $list);
+        self::assertArrayHasKey('en-gb', $list);
+        self::assertArrayNotHasKey('en-150', $list, 'en-150 is part of the ignored locale list, so should be ignored');
+        self::assertArrayNotHasKey('empty', $list, 'empty has no territories defined, so should be ignored');
 
         $versionFile = $outputDir . '_version.php';
-        $this->assertFileExists($versionFile);
+        self::assertFileExists($versionFile);
         $version = require $versionFile;
 
-        $this->assertSame('1', $version);
+        self::assertSame('1', $version);
 
         return $outputDir;
     }
@@ -62,20 +60,20 @@ class DataBuilderTest extends TestCase
     {
         $englishFile = $outputDir . 'en.php';
 
-        $this->assertFileExists($englishFile);
+        self::assertFileExists($englishFile);
 
         $data = require $englishFile;
 
-        $this->assertArrayHasKey('MFC', $data);
-        $this->assertSame('My First Country', $data['MFC']);
+        self::assertArrayHasKey('MFC', $data);
+        self::assertSame('My First Country', $data['MFC']);
 
-        $this->assertArrayHasKey('MSC', $data);
-        $this->assertSame('My Second Country', $data['MSC']);
+        self::assertArrayHasKey('MSC', $data);
+        self::assertSame('My Second Country', $data['MSC']);
 
-        $this->assertArrayNotHasKey('EU', $data, 'EU is part of the ignored region list, so should be ignored');
-        $this->assertArrayNotHasKey('GB-alt-short', $data, 'GB-alt-short is an alternative name, so should be ignored');
-        $this->assertArrayNotHasKey('001', $data, '001 is a numerical territory name, so should be ignored');
-        $this->assertArrayNotHasKey('CH', $data, 'CH has the same name as the key, so should be ignored');
+        self::assertArrayNotHasKey('EU', $data, 'EU is part of the ignored region list, so should be ignored');
+        self::assertArrayNotHasKey('GB-alt-short', $data, 'GB-alt-short is an alternative name, so should be ignored');
+        self::assertArrayNotHasKey('001', $data, '001 is a numerical territory name, so should be ignored');
+        self::assertArrayNotHasKey('CH', $data, 'CH has the same name as the key, so should be ignored');
     }
 
     /**
@@ -86,14 +84,14 @@ class DataBuilderTest extends TestCase
     {
         $englishFile = $outputDir . 'en-gb.php';
 
-        $this->assertFileExists($englishFile);
+        self::assertFileExists($englishFile);
 
         $data = require $englishFile;
 
-        $this->assertArrayNotHasKey('MFC', $data);
+        self::assertArrayNotHasKey('MFC', $data);
 
-        $this->assertArrayHasKey('MSC', $data);
-        $this->assertSame('My Second Country is different here', $data['MSC']);
+        self::assertArrayHasKey('MSC', $data);
+        self::assertSame('My Second Country is different here', $data['MSC']);
     }
 
     /**

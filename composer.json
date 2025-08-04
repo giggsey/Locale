@@ -16,6 +16,7 @@
   "require-dev": {
     "ext-json": "*",
     "php-coveralls/php-coveralls": "^2.7",
+    "infection/infection": "^0.29|^0.31.0",
     "phing/phing": "^2.17.4",
     "pear/versioncontrol_git": "^0.5",
     "pear/pear-core-minimal": "^1.10",
@@ -26,7 +27,12 @@
     "symfony/process": "^6.4",
     "symfony/finder": "^6.4",
     "symfony/var-exporter": "^6.4",
-    "friendsofphp/php-cs-fixer": "^3.66"
+    "friendsofphp/php-cs-fixer": "^3.66",
+    "phpstan/extension-installer": "^1.4.3",
+    "phpstan/phpstan": "^2.1.7",
+    "phpstan/phpstan-deprecation-rules": "^2.0.1",
+    "phpstan/phpstan-phpunit": "^2.0.4",
+    "phpstan/phpstan-strict-rules": "^2.0.3"
   },
   "autoload": {
     "psr-4": {
@@ -54,5 +60,11 @@
     "cs": "vendor/bin/php-cs-fixer fix",
     "test": "vendor/bin/phpunit",
     "metadata": "vendor/bin/phing compile"
+  },
+  "config": {
+    "allow-plugins": {
+      "infection/extension-installer": true,
+      "phpstan/extension-installer": true
+    }
   }
 }
