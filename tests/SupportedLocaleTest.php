@@ -13,11 +13,11 @@ class SupportedLocaleTest extends TestCase
     {
         $list = Locale::getSupportedLocales();
 
-        $this->assertIsArray($list);
+        self::assertIsArray($list);
 
-        $this->assertContains('en', $list);
-        $this->assertContains('zu', $list);
-        $this->assertContains('es', $list);
-        $this->assertContains('es-mx', $list);
+        self::assertContains('en', $list);
+        self::assertContains('zu', $list);
+        self::assertContains('es', $list);
+        self::assertContains('es-mx', $list);
     }
 }

@@ -24,9 +24,8 @@ class DataBuilder
 
     /**
      * Ignore these locales
-     * @var array
      */
-    private $ignoredLocales = [
+    private const IGNORED_LOCALES = [
         'en-US-POSIX',
         'en-001',
         'en-150',
@@ -35,9 +34,8 @@ class DataBuilder
 
     /**
      * Ignore these regions
-     * @var array
      */
-    private $ignoredRegions = [
+    private const IGNORED_REGIONS = [
         'ZZ', // Unknown region
         'QO', // Outlying Ocean Region
         'EU', // European Union
@@ -135,18 +133,15 @@ class DataBuilder
     }
 
     /**
-     * Load Locale list from the source data
-     *
-     * @param string $inputDir Input Directory
-     * @return array List of Locales
+     * @return string[] List of Locales
      */
     private function loadLocales(string $inputDir): array
     {
         $localeList = [];
 
         foreach (scandir($inputDir) as $item) {
-            if (strpos($item, '.') !== 0 && is_dir($inputDir . $item)) {
-                if (in_array($item, $this->ignoredLocales, true)) {
+            if (!str_starts_with($item, '.') && is_dir($inputDir . $item)) {
+                if (in_array($item, self::IGNORED_LOCALES, true)) {
                     // Skip over any ignored locales
                     continue;
                 }
@@ -158,6 +153,10 @@ class DataBuilder
         return $localeList;
     }
 
+    /**
+     * @param string[] $localeList
+     * @return array<string,array<string,string>>
+ */
     protected function loadTerritories(string $inputDir, array $localeList): array
     {
         $countries = [];
@@ -170,7 +169,7 @@ class DataBuilder
                 continue;
             }
 
-            $data = json_decode(file_get_contents($path), true);
+            $data = json_decode((string)file_get_contents($path), true, flags: JSON_THROW_ON_ERROR);
             $territoryList = $data['main'][$locale]['localeDisplayNames']['territories'];
 
             $countries[$locale] = [];
@@ -186,7 +185,7 @@ class DataBuilder
                     continue;
                 }
 
-                if (in_array($territory, $this->ignoredRegions, true)) {
+                if (in_array($territory, self::IGNORED_REGIONS, true)) {
                     // Ignore certain regions
                     continue;
                 }
@@ -203,6 +202,9 @@ class DataBuilder
         return $countries;
     }
 
+    /**
+     * @param array<string,string> $data
+     */
     private function writeTerritoryFile(string $outputDir, string $locale, array $data): void
     {
         $phpSource = '<?php'
@@ -214,6 +216,9 @@ class DataBuilder
         file_put_contents($outputDir . strtolower($locale) . '.php', $phpSource);
     }
 
+    /**
+     * @param string[] $countryList
+     */
     private function writeMappingFile(string $outputDir, array $countryList): void
     {
         $phpSource = '<?php'

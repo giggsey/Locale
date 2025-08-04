@@ -13,23 +13,23 @@ class CountryListTest extends TestCase
     {
         $countryList = Locale::getAllCountriesForLocale('en');
 
-        $this->assertIsArray($countryList);
+        self::assertIsArray($countryList);
 
-        $this->assertArrayHasKey('GB', $countryList);
-        $this->assertSame('United Kingdom', $countryList['GB']);
+        self::assertArrayHasKey('GB', $countryList);
+        self::assertSame('United Kingdom', $countryList['GB']);
     }
 
     public function testCountryListInheriting(): void
     {
         $countryList = Locale::getAllCountriesForLocale('es-bz');
 
-        $this->assertIsArray($countryList);
+        self::assertIsArray($countryList);
 
-        $this->assertArrayHasKey('TA', $countryList);
-        $this->assertSame('Tristán de Acuña', $countryList['TA']);
+        self::assertArrayHasKey('TA', $countryList);
+        self::assertSame('Tristán de Acuña', $countryList['TA']);
 
-        $this->assertArrayHasKey('GB', $countryList);
-        $this->assertSame('Reino Unido', $countryList['GB']);
+        self::assertArrayHasKey('GB', $countryList);
+        self::assertSame('Reino Unido', $countryList['GB']);
     }
 
     public function testCountryListForInvalidLocale(): void

@@ -8,7 +8,7 @@ use RuntimeException;
 
 class Locale
 {
-    protected static $dataDir = '../data/';
+    protected static string $dataDir = '../data/';
 
     /**
      * Gets the primary language for the input locale
@@ -102,7 +102,7 @@ class Locale
         return '';
     }
 
-    public static function getVersion()
+    public static function getVersion(): string
     {
         $file = __DIR__ . DIRECTORY_SEPARATOR . static::$dataDir . '_version.php';
 
@@ -117,6 +117,7 @@ class Locale
     public static function getSupportedLocales(): array
     {
         $dataDir = __DIR__ . DIRECTORY_SEPARATOR . static::$dataDir;
+        /** @var array<string,string> $regionList */
         $regionList = require $dataDir . '_list.php';
 
         return array_keys($regionList);
