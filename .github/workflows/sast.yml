@@ -28,4 +28,5 @@ jobs:
           dependency-versions: highest
 
       - name: Run PHPStan
-        run: "composer run-script phpstan"
+        run: |
+          vendor/bin/phpstan
