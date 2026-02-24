@@ -7,4 +7,4 @@ declare(strict_types=1);
  * Do not modify or use this file directly!
  * @internal
  */
-return '47.0.0';
+return '48.1.0';

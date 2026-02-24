@@ -57,6 +57,7 @@ return [
     'CM' => 'Kamaru',
     'CN' => 'Sin',
     'CO' => 'Kolambiya',
+    'CQ' => 'Sark',
     'CR' => 'Kwasta Rika',
     'CU' => 'Kyuba',
     'CV' => 'Tsibiran Cape Verde',

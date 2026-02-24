@@ -57,6 +57,7 @@ return [
     'CM' => 'Kamerūna',
     'CN' => 'Ķīna',
     'CO' => 'Kolumbija',
+    'CQ' => 'Sarka',
     'CR' => 'Kostarika',
     'CU' => 'Kuba',
     'CV' => 'Kaboverde',

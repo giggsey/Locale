@@ -57,6 +57,7 @@ return [
     'CM' => 'ECameroon',
     'CN' => 'ETshayina',
     'CO' => 'EColombia',
+    'CQ' => 'ESark',
     'CR' => 'ECosta Rica',
     'CU' => 'ECuba',
     'CV' => 'ECape Verde',
