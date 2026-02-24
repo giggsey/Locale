@@ -10,13 +10,12 @@ This was created because [libphonenumber-for-php](https://github.com/giggsey/lib
 
 ## Generating data
 
-Data is compiled from the latest [CLDR Data](http://cldr.unicode.org/) as specified in [CLDR-VERSION.txt](CLDR-VERSION.txt).
-
-A [Phing](https://www.phing.info/) task is used to compile the data from [JSON](https://github.com/unicode-org/cldr-json) into native PHP arrays.
+Data is compiled from the latest [CLDR Data](http://cldr.unicode.org/) as specified in [CLDR-VERSION.txt](CLDR-VERSION.txt). The [JSON](https://github.com/unicode-org/cldr-json) data is built into native PHP arrays.
 
 It is not normally needed to compile the data, as this repository will always have the up to date CLDR data.
-To manually compile the data, ensure you have all the dependencies installed, then run:
+
+To manually compile the data, run the composer script 'build':
 
 ```bash
-vendor/bin/phing compile
+composer run build
 ```
