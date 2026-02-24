@@ -48,7 +48,8 @@
       ".gitattributes",
       ".gitignore",
       ".php-cs-fixer.dist.php",
-      "phpunit.xml.dist"
+      "phpunit.xml.dist",
+      "phpstan.neon.dist"
     ]
   },
   "scripts": {
