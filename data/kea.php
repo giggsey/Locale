@@ -115,6 +115,7 @@ return [
     'IL' => 'Israel',
     'IM' => 'Ilha di Man',
     'IN' => 'Índia',
+    'IO' => 'Ilhas Británikas di Índiku',
     'IQ' => 'Iraki',
     'IR' => 'Irãu',
     'IS' => 'Islándia',

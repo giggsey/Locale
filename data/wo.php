@@ -57,6 +57,7 @@ return [
     'CM' => 'Kamerun',
     'CN' => 'Siin',
     'CO' => 'Kolombi',
+    'CQ' => 'Guernsey Pound',
     'CR' => 'Kosta Rika',
     'CU' => 'Kuba',
     'CV' => 'Kabo Werde',

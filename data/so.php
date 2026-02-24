@@ -57,6 +57,7 @@ return [
     'CM' => 'Kaameruun',
     'CN' => 'Shiinaha',
     'CO' => 'Koloombiya',
+    'CQ' => 'Sark',
     'CR' => 'Costa Rica',
     'CU' => 'Kuuba',
     'CV' => 'Jasiiradda Kayb Faarde',
