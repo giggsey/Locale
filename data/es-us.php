@@ -9,7 +9,6 @@ declare(strict_types=1);
  */
 return [
     'AX' => 'Islas Åland',
-    'CG' => 'República del Congo',
     'CI' => 'Costa de Marfil',
     'EH' => 'Sahara Occidental',
     'GG' => 'Guernsey',
@@ -18,4 +17,5 @@ return [
     'RO' => 'Rumania',
     'SA' => 'Arabia Saudita',
     'TL' => 'Timor Oriental',
+    'VI' => 'Islas Vírgenes de EE.UU.',
 ];

@@ -8,5 +8,6 @@ declare(strict_types=1);
  * @internal
  */
 return [
-    'SB' => 'Solomon Aelan',
+    'RU' => 'Урысей',
+    'TR' => 'Тыркуе',
 ];

@@ -243,7 +243,7 @@ return [
     'TZ' => 'i-Tanzania',
     'UA' => 'i-Ukraine',
     'UG' => 'i-Uganda',
-    'UM' => 'I-U.S. Outlying Islands',
+    'UM' => 'i-U.S. Outlying Islands',
     'US' => 'i-United States',
     'UY' => 'i-Uruguay',
     'UZ' => 'i-Uzbekistan',

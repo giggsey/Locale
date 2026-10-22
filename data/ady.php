@@ -8,5 +8,7 @@ declare(strict_types=1);
  * @internal
  */
 return [
-    'SZ' => 'eSwatini',
+    'JO' => 'Иордание',
+    'RU' => 'Урысые',
+    'TR' => 'Тыркуе',
 ];
