@@ -8,5 +8,6 @@ declare(strict_types=1);
  * @internal
  */
 return [
+    'GT' => 'Guatemala',
     'MK' => 'Macedonia del Norte',
 ];

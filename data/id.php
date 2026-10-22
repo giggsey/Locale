@@ -36,7 +36,7 @@ return [
     'BJ' => 'Benin',
     'BL' => 'Saint Barthélemy',
     'BM' => 'Bermuda',
-    'BN' => 'Brunei',
+    'BN' => 'Brunei Darussalam',
     'BO' => 'Bolivia',
     'BQ' => 'Belanda Karibia',
     'BR' => 'Brasil',

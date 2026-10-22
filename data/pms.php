@@ -8,5 +8,10 @@ declare(strict_types=1);
  * @internal
  */
 return [
+    'AT' => 'Àustria',
+    'CH' => 'Svìssera',
+    'FR' => 'Fransa',
     'IT' => 'Italia',
+    'SI' => 'Slovenia',
+    'SM' => 'Repùblica ëd San Marin',
 ];

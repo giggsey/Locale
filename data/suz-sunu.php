@@ -8,5 +8,5 @@ declare(strict_types=1);
  * @internal
  */
 return [
-    'US' => '𞄒𞄫𞄱𞄔𞄩𞄴',
+    'NP' => '𑯍𑯂𑯉𑯖𑯂',
 ];

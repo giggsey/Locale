@@ -227,7 +227,7 @@ return [
     'TA' => 'Tristan da Cunha',
     'TC' => 'Turks & Caicos Islands',
     'TD' => 'Chad',
-    'TF' => 'French Southern Territories',
+    'TF' => 'French Southern and Antarctic Lands',
     'TG' => 'Togo',
     'TH' => 'Thailand',
     'TJ' => 'Tajikistan',

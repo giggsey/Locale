@@ -8,6 +8,7 @@ declare(strict_types=1);
  * @internal
  */
 return [
+    'CQ' => 'Sark',
     'FR' => 'Fransa',
     'IT' => 'Italia',
     'MC' => 'Monego',
